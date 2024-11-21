@@ -31,6 +31,7 @@ a:hover{
     color: rgba(118, 60, 207, 1);
     font-size: 24px;
     font-weight: 600;
+    cursor: pointer;
 }
 .container nav .nav_div,
 .container nav .nav_div .nav_links,
@@ -118,7 +119,13 @@ section .events .event_header{
     display: flex;
     align-items: center;
 }
-
+.container .main_div .main_div_content .filter_options .input_div{
+    display: flex;
+    align-items: center;
+}
+.container .main_div .main_div_content .filter_options .input_div .bi-search{
+    margin-bottom: 5px;
+}
 .container .main_div .main_div_content .filter_options .categories_section::before{
     display: block;
     content: "";
@@ -226,6 +233,12 @@ section .events .each_event .event_card .event_content button:hover{
     .container .main_div .main_div_content p{
         font-size: 20px;
         line-height: 24px;
+    }
+}
+
+@media screen and (max-width:662px){
+    section .events .each_event{
+        justify-items: center;
     }
 }
 
