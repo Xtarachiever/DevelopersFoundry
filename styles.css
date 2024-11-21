@@ -19,7 +19,7 @@ a:hover{
     /* filter: blur(10px); */
     padding: 12px 30px;
     border-radius: 10px;
-    width: 80vw;
+    width: 90vw;
     margin: auto;
     position: absolute;
     top: 50px;
@@ -42,7 +42,7 @@ section .events .event_header{
     justify-content: space-between;
 }
 .container nav .nav_div .nav_links{
-    gap: 20px;
+    gap: 40px;
 }
 .container nav .nav_div .nav_buttons{
     gap: 20px;
@@ -87,8 +87,8 @@ section .events .event_header{
 .container .main_div .main_div_content{
     display: flex;
     align-items: flex-end;
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
     margin: auto;
     justify-content: space-between;
     gap: 20px;
@@ -226,6 +226,7 @@ section .events .each_event .event_card .event_content button:hover{
         color: white;
         flex-direction: column;
         align-items: end;
+        gap: 20px;
     }
     .container nav .nav_div .nav_links a{
         color: white;
