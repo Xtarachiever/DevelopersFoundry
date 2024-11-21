@@ -246,12 +246,14 @@ section .events .each_event .event_card .event_content button:hover{
     .container .main_div .main_div_content .filter_options{
         flex-direction: column;
         width: 100%;
+        gap: 5px;
     }
     .container .main_div .main_div_content .filter_options .input_div{
         width: 100%;
     }
     .container .main_div .main_div_content .filter_options .input_div input{
-        width: 80%;
+        width: 90%;
+        border-bottom: 2px solid rgb(147, 83, 243);
     }
     .container .main_div .main_div_content .filter_options .categories_section::before{
         display: none;
