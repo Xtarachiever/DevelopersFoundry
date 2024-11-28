@@ -163,7 +163,7 @@ section .events .event_header a{
 section .events .each_event{
     padding: 25px 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
     gap: 30px;
 }
 section .events .each_event .event_card{
@@ -178,8 +178,14 @@ section .events .each_event .event_card:hover{
     cursor: pointer;
     transition: all .3s ease-in;
 }
+section .events .each_event .event_card .img_wrapper{
+    text-align: center;
+    width: 100%;
+}
 section .events .each_event .event_card img{
     width: 100%;
+    max-width: 200px;
+    height: 200px;
 }
 section .events .each_event .event_card .event_content{
     padding: 20px;

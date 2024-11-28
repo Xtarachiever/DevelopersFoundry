@@ -1,1 +1,1 @@
-// import { Product } from "./product";
+import './elementManipulation.js';

@@ -1,5 +1,5 @@
-class ProductService{
-    #handlePromise = async({url, method="GET", body=null})=>{
+export class ProductService{
+    #handlePromise = async({ url, method="GET", body=null})=>{
         try{
             const response = await fetch(`https://fakestoreapi.com/products/${url}`,{
                 method,
@@ -7,12 +7,12 @@ class ProductService{
             })
             return await response.json();
         }catch(err){
-            console.log(err)
+            console.log(err + 'here')
         }
     }
 
     async getProducts(){
-        const response = await this.#handlePromise();
+        const response = await this.#handlePromise({url:""});
         return response;
     }
 
@@ -29,16 +29,23 @@ class ProductService{
 }
 
 class Product{
-    constructor({category,description,id,image}){
+    constructor({category,description,id,image,title,price,rating}){
         this.id = id;
         this.category = category;
         this.description = description;
         this.image = image;
+        this.rating = rating;
+        this.title = title;
+        this.price = price;
     }
+    productService = new ProductService();
     id;
     category;
     description;
     image;
+    rating;
+    title;
+    price;
 }
 
 const product = new Product({
@@ -52,12 +59,9 @@ const product = new Product({
         "rate": 3.9,
         "count": 120
     }
+
 });
 const productService = new ProductService();
-
-const products = await productService.getProductById(10)
-console.log(products)
-// console.log(productService?.getProductById())
-// console.log(productService?.deleteProductById())
+// console.log(await productService?.getProducts())
 
  
