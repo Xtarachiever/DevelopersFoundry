@@ -101,7 +101,7 @@ section .events .event_header{
     width: 100%;
     max-width: 400px;
     font-weight: bold;
-    max-width: 350px;
+    max-width: 40%;
 }
 .container .main_div .main_div_content .filter_options{
     background-color: white;
@@ -204,6 +204,11 @@ section .events .each_event .event_card .event_content button{
 section .events .each_event .event_card .event_content button:hover{
     color: rgb(30, 0, 75);
     cursor: pointer;
+}
+@media screen and (max-width:1400px) {
+    .container .main_div .main_div_content p{
+        max-width: 350px;
+    }
 }
 @media screen and (max-width:900px) {
     .container .main_div .main_div_content{
