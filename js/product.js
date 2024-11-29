@@ -62,6 +62,5 @@ const product = new Product({
 
 });
 const productService = new ProductService();
-// console.log(await productService?.getProducts())
-
- 
+const productServiceLength = await productService?.getProducts()
+// console.log(productServiceLength.length)

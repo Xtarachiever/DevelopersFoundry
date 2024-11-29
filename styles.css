@@ -1,5 +1,5 @@
 *{
-    margin: 0px;
+    margin: 0;
     box-sizing: border-box;
 }
 .container{
@@ -21,10 +21,10 @@ a:hover{
     border-radius: 10px;
     width: 90vw;
     margin: auto;
-    position: absolute;
+    position: sticky;
     top: 50px;
-    transform: translateX(-50%);
-    left: 50%;
+    /* transform: translateX(-50%);
+    left: 50%; */
     z-index: 10;
 }
 .container nav p.logo{
@@ -64,6 +64,9 @@ section .events .event_header{
     background-color: rgb(147, 83, 243);
     cursor: pointer;
     transition: all .3s ease-out;
+}
+.container main{
+    margin-top: -65px;
 }
 .container .main_div{
     background: url('./images/concert-stage.jpg');
@@ -163,7 +166,7 @@ section .events .event_header a{
 section .events .each_event{
     padding: 25px 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 section .events .each_event .event_card{
