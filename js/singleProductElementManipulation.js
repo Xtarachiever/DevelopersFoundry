@@ -8,7 +8,10 @@ const getSingleProductDetails = async (id) => {
   const products = await productService?.getProducts();
   each_event_div.innerHTML = `
         <div class="product_div">
-            <button class="arrow_counterclockwise"><i class="bi bi-arrow-counterclockwise"></i><span>Back</span></button>
+            <div class="links">
+                <button class="arrow_counterclockwise"><i class="bi bi-arrow-counterclockwise"></i><span>Back</span></button>
+                <div class="home_link"><a href="/" ><i class="bi bi-house"></i><span>Home</span></a></div>
+            </div>
             <div class="img_div"><img src=${productById?.image} alt=${productById?.title}/></div>
             <div class="details">
                <p class="product_title">${productById?.title}</p>

@@ -18,15 +18,37 @@ body{
     background-color: white;
     position: relative;
 }
-.each_product_details .product_div button{
+.each_product_details .product_div .links{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+}
+.each_product_details .product_div .links .home_link{
+    right: 40px;
+    position: inherit;
+    display: block;
+}
+.each_product_details .product_div .links .home_link a{
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.each_product_details .product_div .links .home_link .bi{
+    margin-bottom: 3px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+.each_product_details .product_div .links button{
     outline: none;
     border: none;
     color: rgb(68, 24, 133);
     background-color: inherit;
     font-size: 24px;
     cursor: pointer;
-    position: absolute;
     left: 40px;
+    position: inherit;
 }
 .each_product_details .product_div button.arrow_counterclockwise span{
     color: black;
