@@ -31,20 +31,16 @@ const getSingleProductDetails = async (id) => {
   prevArrow.addEventListener("click", async () => {
     let newId = +id - 1;
     if (newId !== 0) {
-      getSingleProductDetails(newId);
-      setTimeout(() => {
+        getSingleProductDetails(newId);
         window.location.href = `/productDetails.html?id=${newId}`;
-      }, 200);
     }
   });
 
   nextArrow.addEventListener("click", async () => {
     let newId = Number(id) + 1;
     if (newId <= products.length) {
-      getSingleProductDetails(newId);
-      setTimeout(() => {
+        getSingleProductDetails(newId);
         window.location.href = `/productDetails.html?id=${newId}`;
-      }, 300);
     }
   });
 };
