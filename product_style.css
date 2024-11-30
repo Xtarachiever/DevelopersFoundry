@@ -16,6 +16,7 @@ body{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 30px;
     background-color: white;
+    position: relative;
 }
 .each_product_details .product_div button{
     outline: none;
@@ -23,6 +24,25 @@ body{
     color: rgb(68, 24, 133);
     background-color: inherit;
     font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 40px;
+}
+.each_product_details .product_div button.arrow_counterclockwise span{
+    color: black;
+    font-size: 16px;
+    padding: 0px 5px;
+}
+.each_product_details .product_div .navigation_button{
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    gap: 20px;
+}
+.each_product_details .product_div .navigation_button .bi{
+    font-size: 34px;
+    cursor: pointer;
 }
 .each_product_details .product_div .img_div{
     max-width: 300px;
@@ -46,7 +66,9 @@ body{
 .each_product_details .product_div .details .product_description{
     font-size: 18px;
 }
+.each_product_details .product_div .details p{
+    padding: 6px 0px;
+}
 .each_product_details .product_div .details span{
     font-weight: bold;
-    padding-top: 10px;
 }

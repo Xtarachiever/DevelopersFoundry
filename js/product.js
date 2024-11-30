@@ -1,10 +1,12 @@
 export class ProductService{
     #handlePromise = async({ url, method="GET", body=null})=>{
+        // const loader = document.querySelector('.loader')
         try{
             const response = await fetch(`https://fakestoreapi.com/products/${url}`,{
                 method,
                 body: body ? JSON.stringify(body) : null
             })
+            // if(response?.ok)
             return await response.json();
         }catch(err){
             console.log(err + 'here')
