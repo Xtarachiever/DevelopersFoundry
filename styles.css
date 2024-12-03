@@ -5,7 +5,15 @@
 .my_container{
     position: relative;
     min-width: 300px;
-    overflow: hidden;
+}
+.shadow_cover{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    display: block;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 a:hover{
     color: rgb(129, 66, 223);
@@ -24,9 +32,15 @@ section .events .event_header{
 .my_container main{
     margin-top: -80px;
 }
+.my_container .main_div .main_div_content{
+    flex-direction: row;
+}
 .my_container .main_div .filter_options .input_div{
     display: flex;
     align-items: center;
+}
+.my_container .main_div .mobile.nav_links{
+    display: none;
 }
 .my_container .main_div .filter_options .input_div .bi-search{
     margin-bottom: 5px;
@@ -97,33 +111,43 @@ section .events .each_event .event_card .event_content button:hover{
     color: rgb(30, 0, 75);
     cursor: pointer;
 }
+footer p{
+    padding-top: 6px;
+}
+footer div .sub_headers{
+    cursor: pointer;
+    font-size: 12px;
+}
 @media screen and (max-width:900px) {
     .my_container .main_div .main_div_content{
         justify-content: flex-end;
+        flex-direction: column;
     }
     .my_container .main_div .main_div_content p{
         display: none;
     }
+    .my_container .main_div .mobile.nav_links{
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+    }
 }
 
 @media screen and (max-width:850px) {
-    .my_container nav .nav_div .nav_links{
-        position: absolute;
-        right: 0px;
-        top: 80px;
-        color: white;
-        flex-direction: column;
-        align-items: end;
-        gap: 10px;
+    .my_container nav .nav_div .desktop.nav_links{
+        display: none;
     }
     .my_container nav .nav_div .nav_links a{
         color: white;
     }
 }
 
-@media screen and (max-width:662px){
+@media screen and (max-width:737px){
     section .events .each_event{
         justify-items: center;
+    }
+    section .events .each_event{
+        grid-template-columns: 1fr;
     }
 }
 
@@ -143,16 +167,19 @@ section .events .each_event .event_card .event_content button:hover{
     .my_container .main_div .filter_options .categories_section::before{
         display: none;
     }
-    .my_container nav .nav_div .nav_links{
+    /* .my_container nav .nav_div .nav_links{
         gap: 10px;
-    }
+    } */
     section .events{
         width: 100%;
-        padding: 10px 20px;
+        padding: 10px 5px;
         margin-top: 15px;
     }
-    .my_container .main_div .main_div_content{
+    .my_container .main_div .main_div_content .filter_options{
         display: none;
+    }
+    .my_container .main_div .mobile.nav_links{
+        gap: 20px;
     }
 }
 
@@ -171,6 +198,12 @@ section .events .each_event .event_card .event_content button:hover{
     }
     section .events .event_header a{
         align-self: flex-end;
+    }
+}
+@media screen and (max-width:350px){
+    footer div .footer_right_contents{
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
 }
 @media screen and (max-width:230px) {

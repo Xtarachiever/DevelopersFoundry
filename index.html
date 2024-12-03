@@ -13,51 +13,116 @@
 <body>
     <div class="my_container">
         <!-- <div class="loader"></div> -->
-        <nav class="shadow-md px-10 py-3 rounded-xl w-[90vw] m-auto sticky top-[50px] z-[10]">
-            <div class="nav_div">
-                <p class="text-purple-text text-md sm:text-xl md:text-2xl font-semibold cursor-pointer">rendezvous</p>
-                <div class="nav_links text-purple-text">
-                    <a href="#" >Discover</a>
-                    <a href="#">About us</a>
-                    <a href="#">FAQs</a>
-                    <a href="#">Contact us</a>
+        <div class=" min-h-[100vh] pb-[500px] sm:pb-[300px]">
+            <nav class="shadow-md px-10 py-3 rounded-xl w-[95%] sm:w-[90vw] m-auto sticky top-[50px] z-[10]">
+                <div class="nav_div">
+                    <p class="text-purple-text text-md sm:text-xl md:text-2xl font-semibold cursor-pointer">rendezvous</p>
+                    <div class="nav_links desktop text-purple-text">
+                        <a href="#" >Discover</a>
+                        <a href="#">About us</a>
+                        <a href="#">FAQs</a>
+                        <a href="#">Contact us</a>
+                    </div>
+                    <div class="nav_buttons gap-[20px]">
+                        <p class="cursor-pointer text-purple-text">Log in</p>
+                        <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">Sign up</button>
+                    </div>
                 </div>
-                <div class="nav_buttons gap-[20px]">
-                    <p class="cursor-pointer text-purple-text">Log in</p>
-                    <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">Sign up</button>
+            </nav>
+            <main>
+                <div class="main_div bg-[url('../images/concert-stage.jpg')] bg-cover bg-center w-[100vw] max-h-[600px] h-[400px] relative z-0 min-w-[300px]">
+                    <div class="bg-black opacity-40 z-1 w-full h-full absolute top-0 block"></div>
+                    <div class="main_div_content flex flex-col md:flex-row items-end h-[90%] w-[90%] m-auto text-white justify-between gap-[20px] z-[2] relative">
+                        <div class="nav_links mobile text-right">
+                            <a href="#" >Discover</a>
+                            <a href="#">About us</a>
+                            <a href="#">FAQs</a>
+                            <a href="#">Contact us</a>
+                        </div>
+                        <p class="text-white text-xs leading-8 sm:text-[25px] w-full max-w-[400px] 2xl:max-w-[40%] 4xl:max-w-[60%] font-bold">Ready to Rock? Didcover the Hottest Events Here - Your Calendar's New Best Friend!</p>
+                        <div class="filter_options flex items-center justify-between relative text-center rounded-xl bg-white px-4 py-4">
+                            <div class="input_div">
+                                <i class="bi bi-search"></i>
+                                <input class="text-black" name="Search" placeholder="Search for an event" />
+                            </div>
+                            <div class="categories_section flex items-center gap-[30px]">
+                                <select class="border-none outline-none text-gray">
+                                    <option selected value="categories">Categories</option>
+                                </select>
+                                <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <section>
+                <div class="events pt-10 w-[80%] m-auto">
+                    <div class="event_header">
+                        <p class="text-[20px] font-semibold">Trending events</p>
+                        <a href="#">View all trending events <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                    <div class="each_event">
+                    </div>
+                </div>
+            </section>
+            <div class="discovery-section py-8 w-[80%] flex m-auto justify-between flex-col md:flex-row gap-[20px]">
+                <div class="flex-initial w-full md:w-[35%] items-center mt-4 justify">
+                    <p class="text-left text-2xl mb-4">Discover a World of Events Tailored Just for You.</p>
+                    <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">View All Events</button>
+                </div>
+                <div class="boxes relative grid grid-cols-1 sm:grid-cols-2 w-full md:w-[70%] gap-4">
+                    <div class="relative min-w-[140px]">
+                        <div class="shadow_cover"></div>
+                        <p class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-2 text-white font-semibold text-xl text-center">Online Events</p>
+                        <img src="./images/online_events.jpg" alt="online_events" class="h-full object-cover w-full"/>
+                    </div>
+                    <div class="relative min-w-[140px]">
+                        <div class="shadow_cover"></div>
+                        <p class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-2 text-white font-semibold text-xl text-center">Physical Events</p>
+                        <img src="./images/physical_events.jpg" alt="physical_events" class="h-full object-cover w-full"/>
+                    </div>
+                    <div class="relative min-w-[140px]">
+                        <div class="shadow_cover"></div>
+                        <p class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-2 text-white font-semibold text-xl text-center">Hybrid Events</p>
+                        <img src="./images/hybrid_events.jpg" alt="hybrid_events" class="h-full object-cover w-full"/>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <main>
-            <div class="main_div bg-[url('../images/concert-stage.jpg')] bg-cover bg-center w-[100vw] max-h-[600px] h-[400px] relative z-0 min-w-[300px]">
-                <div class="shadow_cover bg-black opacity-40 z-1 w-full h-full absolute top-0 block"></div>
-                <div class="main_div_content flex flex-col sm:flex-row items-end h-[90%] w-[90%] m-auto text-white justify-between gap-[20px] z-[2] relative">
-                    <p class="text-white text-xs leading-8 sm:text-[25px] w-full max-w-[400px] 2xl:max-w-[40%] 4xl:max-w-[60%] font-bold">Ready to Rock? Didcover the Hottest Events Here - Your Calendar's New Best Friend!</p>
-                    <div class="filter_options flex items-center justify-between relative text-center rounded-xl bg-white px-4 py-4">
-                        <div class="input_div">
-                            <i class="bi bi-search"></i>
-                            <input class="text-black" name="Search" placeholder="Search for an event" />
+        </div>
+        <footer class="bg-footer text-white px-4 py-6 min-h-[300px] absolute bottom-0 w-full z-10">
+            <div class="w-[95%] md:w-[80%] m-auto flex flex-col sm:flex-row justify-between items-start pt-6">
+                <div class="w-full sm:w-[40%] pb-6 sm:pt-6">
+                    <p class="text-2xl">rendezvous</p>
+                    <p class="max-w-[350px]">Your Personal Event Sherpa: Curating Awesome, One Click at a Time.</p>
+                </div>
+                <div class="flex items-start gap-[40px] w-full sm:w-[50%] justify-between footer_right_contents">
+                    <div class="">
+                        <p class=" text-[16px] font-semibold">Feature</p>
+                        <div class="sub_headers">
+                            <p>Events discovery</p>
+                            <p>Ticketing</p>
                         </div>
-                        <div class="categories_section flex items-center gap-[30px]">
-                            <select class="border-none outline-none text-gray">
-                                <option selected value="categories">Categories</option>
-                            </select>
-                            <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">Search</button>
+                    </div>
+                    <div class="">
+                        <p class=" text-[16px] font-semibold">Company</p>
+                        <div class="sub_headers">
+                            <p>About us</p>
+                            <p>FAQs</p>
+                            <p>Careers</p>
+                            <p>Support</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[16px]">Contact us</p>
+                        <div class="sub_headers">
+                            <p>info@events.com</p>
+                            <p>+234 701 345 6789</p>
+                            <p class="max-w-[300px]">Race Course, 8/9 Marina, Onikan, Lagos Lagos, 4aa Force Rd, Lagos Island 102273, Lagos</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <section>
-            <div class="events pt-10 w-[80%] m-auto">
-                <div class="event_header">
-                    <p class="text-[20px] font-semibold">Trending events</p>
-                    <a href="#">View all trending events <i class="bi bi-arrow-up-right"></i></a>
-                </div>
-                <div class="each_event">
-                </div>
-            </div>
-        </section>
+        </footer>
     </div>
 </body>
 <script src="js/index.js" defer type="module"></script>

@@ -1,3 +1,4 @@
+import { truncateText } from "./functions.js";
 import { ProductService } from "./product.js";
 
 const productService = new ProductService();
@@ -15,7 +16,7 @@ const createProductCard = () =>{
             <div class="event_content">
                 <p class="event_title">${product?.title}</p>
                 <p class="event_date">Sun, Oct 3rd <span class="dot">•</span> 6pm</p>
-                <p>${product?.description}
+                <p>${truncateText(product?.description,100)}
                 </p>
                 <button class="view_details_${product?.id}" >
                     View details

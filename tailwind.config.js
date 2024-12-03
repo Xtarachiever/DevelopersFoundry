@@ -8,6 +8,7 @@ module.exports = {
         'hover-text':'rgb(129, 66, 223)',
         'purple-text':'rgb(68, 24, 133)',
         'purple-button':'rgba(118, 60, 207, 1)',
+        'footer':'rgba(67, 35, 97, 1)',
         black: '#000',
         gray:'rgb(117, 117, 117)'
       },
