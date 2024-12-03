@@ -5,52 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI Task</title>
-    <link rel="stylesheet" href="./styles.css"></link>
+    <link rel="stylesheet" href="./styles.css"/>
+    <link  href="./styles/output.css" rel="stylesheet"></link>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="my_container">
         <!-- <div class="loader"></div> -->
-        <nav>
+        <nav class="shadow-md px-10 py-3 rounded-xl w-[90vw] m-auto sticky top-[50px] z-[10]">
             <div class="nav_div">
-                <p class="logo">rendezvous</p>
-                <div class="nav_links">
-                    <a href="#">Discover</a>
+                <p class="text-purple-text text-md sm:text-xl md:text-2xl font-semibold cursor-pointer">rendezvous</p>
+                <div class="nav_links text-purple-text">
+                    <a href="#" >Discover</a>
                     <a href="#">About us</a>
                     <a href="#">FAQs</a>
                     <a href="#">Contact us</a>
                 </div>
-                <div class="nav_buttons">
-                    <p>Log in</p>
-                    <button class="sign_up">Sign up</button>
+                <div class="nav_buttons gap-[20px]">
+                    <p class="cursor-pointer text-purple-text">Log in</p>
+                    <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">Sign up</button>
                 </div>
             </div>
         </nav>
         <main>
-            <div class="main_div">
-                <div class="shadow_cover"></div>
-                <div class="main_div_content">
-                    <p>Ready to Rock? Didcover the Hottest Events Here - Your Calendar's New Best Friend!</p>
-                    <div class="filter_options">
+            <div class="main_div bg-[url('../images/concert-stage.jpg')] bg-cover bg-center w-[100vw] max-h-[600px] h-[400px] relative z-0 min-w-[300px]">
+                <div class="shadow_cover bg-black opacity-40 z-1 w-full h-full absolute top-0 block"></div>
+                <div class="main_div_content flex flex-col sm:flex-row items-end h-[90%] w-[90%] m-auto text-white justify-between gap-[20px] z-[2] relative">
+                    <p class="text-white text-xs leading-8 sm:text-[25px] w-full max-w-[400px] 2xl:max-w-[40%] 4xl:max-w-[60%] font-bold">Ready to Rock? Didcover the Hottest Events Here - Your Calendar's New Best Friend!</p>
+                    <div class="filter_options flex items-center justify-between relative text-center rounded-xl bg-white px-4 py-4">
                         <div class="input_div">
                             <i class="bi bi-search"></i>
-                            <input class="" name="Search" placeholder="Search for an event" />
+                            <input class="text-black" name="Search" placeholder="Search for an event" />
                         </div>
-                        <div class="categories_section">
-                            <select>
+                        <div class="categories_section flex items-center gap-[30px]">
+                            <select class="border-none outline-none text-gray">
                                 <option selected value="categories">Categories</option>
                             </select>
-                            <button class="search">Search</button>
+                            <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">Search</button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <section>
-            <div class="events">
+            <div class="events pt-10 w-[80%] m-auto">
                 <div class="event_header">
-                    <p>Trending events</p>
+                    <p class="text-[20px] font-semibold">Trending events</p>
                     <a href="#">View all trending events <i class="bi bi-arrow-up-right"></i></a>
                 </div>
                 <div class="each_event">

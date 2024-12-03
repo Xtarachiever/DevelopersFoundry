@@ -1,3 +1,9 @@
 {
-    "type": "module"
+    "type": "module",
+    "devDependencies": {
+        "tailwindcss": "^3.4.15"
+    },
+    "scripts":{
+        "dev":"npx tailwindcss -i ./styles/tailwind.css -o ./styles/output.css --watch"
+    }
 }
