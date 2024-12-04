@@ -1088,6 +1088,10 @@ video {
     height: 500px;
   }
 
+  .sm\:h-\[600px\] {
+    height: 600px;
+  }
+
   .sm\:min-h-\[400px\] {
     min-height: 400px;
   }
