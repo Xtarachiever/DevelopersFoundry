@@ -12,7 +12,7 @@ const getSingleProductDetails = async (id) => {
         <div class="product_div relative pb-4 md:pb-2">
           <div class=" w-full py-4 shadow-lg"><img src=${
             productById?.image
-          } alt=${productById?.title} class="max-w-[300px] w-full m-auto"/></div>
+          } alt=${productById?.title} class="max-w-[200px] sm:max-w-[300px] w-full m-auto"/></div>
             <div class="main_container flex flex-col md:flex-row justify-between gap-[20px] pb-4 sm:pb-0">
               <div class="details p-[20px] w-full md:w-[60%] lg:w-[70%]">
                 <p class="font-semibold text-xl py-2">${productById?.title}</p>
