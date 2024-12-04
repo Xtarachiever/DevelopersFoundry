@@ -65,8 +65,29 @@ section .events .each_event{
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
+.boxes div{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.boxes div:hover img,
+.boxes div:hover .shadow_cover{
+    scale: 1.04;
+    transition: all .2s ease-in-out;
+}
+.boxes div:hover .shadow_cover{
+    background-color: rgb(147, 83, 243,.3);
+}
+@media screen and (max-width:1800px) and (min-width:1124px){
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+    section .events .each_event{
+        /* padding: 25px 0px;
+        display: grid; */
+        grid-template-columns: 1fr 1fr 1fr;
+        /* gap: 30px; */
+    }
+}
 section .events .each_event .event_card{
-    max-width: 340px;
+    /* max-width: 340px; */
     border: 1px solid rgb(237, 235, 239);
     border-radius: 10px;
     overflow: hidden;
@@ -130,6 +151,7 @@ footer div .sub_headers{
         display: flex;
         flex-direction: column;
         z-index: 2;
+        gap: 12px;
     }
 }
 
@@ -145,9 +167,10 @@ footer div .sub_headers{
 @media screen and (max-width:737px){
     section .events .each_event{
         justify-items: center;
-    }
-    section .events .each_event{
         grid-template-columns: 1fr;
+    }
+    section .events .each_event .event_card{
+        max-width: 400px;
     }
 }
 

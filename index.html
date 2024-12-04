@@ -30,7 +30,7 @@
                 </div>
             </nav>
             <main>
-                <div class="main_div bg-[url('../images/concert-stage.jpg')] bg-cover bg-center w-[100vw] max-h-[600px] h-[400px] relative z-0 min-w-[300px]">
+                <div class="main_div bg-[url('../images/concert-stage.jpg')] bg-cover bg-center w-[100vw] max-h-[800px] h-[400px] sm:h-[500px] relative z-0 min-w-[300px]">
                     <div class="bg-black opacity-40 z-1 w-full h-full absolute top-0 block"></div>
                     <div class="main_div_content flex flex-col md:flex-row items-end h-[90%] w-[90%] m-auto text-white justify-between gap-[20px] z-[2] relative">
                         <div class="nav_links mobile text-right">
@@ -56,10 +56,10 @@
                 </div>
             </main>
             <section>
-                <div class="events pt-10 w-[80%] m-auto">
+                <div class="events pt-10 w-[80%] m-auto max-w-[1800px]">
                     <div class="event_header">
                         <p class="text-[20px] font-semibold">Trending events</p>
-                        <a href="#">View all trending events <i class="bi bi-arrow-up-right"></i></a>
+                        <a href="#" class="text-purple-text">View all trending events <i class="bi bi-arrow-up-right"></i></a>
                     </div>
                     <div class="each_event">
                     </div>
@@ -71,18 +71,18 @@
                     <button class="bg-purple-button border-0 py-[12px] px-[25px] rounded-lg text-white font-semibold hover:bg-button-hover transition-all">View All Events</button>
                 </div>
                 <div class="boxes relative grid grid-cols-1 sm:grid-cols-2 w-full md:w-[70%] gap-4">
-                    <div class="relative min-w-[140px]">
-                        <div class="shadow_cover"></div>
+                    <div class="relative min-w-[140px] cursor-pointer">
+                        <div class="shadow_cover z-2"></div>
                         <p class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-2 text-white font-semibold text-xl text-center">Online Events</p>
-                        <img src="./images/online_events.jpg" alt="online_events" class="h-full object-cover w-full"/>
+                        <img src="./images/online_events.jpg" alt="online_events" class="h-full object-cover w-full hover:scale-100"/>
                     </div>
                     <div class="relative min-w-[140px]">
-                        <div class="shadow_cover"></div>
+                        <div class="shadow_cover z-2"></div>
                         <p class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-2 text-white font-semibold text-xl text-center">Physical Events</p>
                         <img src="./images/physical_events.jpg" alt="physical_events" class="h-full object-cover w-full"/>
                     </div>
                     <div class="relative min-w-[140px]">
-                        <div class="shadow_cover"></div>
+                        <div class="shadow_cover z-2"></div>
                         <p class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-2 text-white font-semibold text-xl text-center">Hybrid Events</p>
                         <img src="./images/hybrid_events.jpg" alt="hybrid_events" class="h-full object-cover w-full"/>
                     </div>

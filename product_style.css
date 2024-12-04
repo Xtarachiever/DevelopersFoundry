@@ -4,17 +4,19 @@
 body{
     margin: auto;
     width: 100%;
-    text-align: center;
+}
+.my_container nav{
+    top: 20px;
 }
 .each_product_details{
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 .each_product_details .product_div{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 30px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    /* padding: 30px; */
     background-color: white;
     position: relative;
 }
@@ -55,34 +57,19 @@ body{
     font-size: 16px;
     padding: 0px 5px;
 }
-.each_product_details .product_div .navigation_button{
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    display: flex;
-    gap: 20px;
-}
 .each_product_details .product_div .navigation_button .bi{
     font-size: 34px;
     cursor: pointer;
 }
-.each_product_details .product_div .img_div{
-    max-width: 300px;
-    margin: auto;
-}
-.each_product_details .product_div .img_div img{
-    width: 100%;
-}
 
-.each_product_details .product_div .details{
-    padding: 20px;
-    text-align: left;
+.each_product_details .product_div .details .specific_event_details p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 300;
 }
-
-.each_product_details .product_div .details .product_title{
-    font-size: 25px;
-    font-weight: 600;
-    padding-bottom: 15px;
+.each_product_details .product_div .details .specific_event_details p .bi{
+    color: rgba(155, 81, 224, 1);
 }
 
 .each_product_details .product_div .details .product_description{
@@ -91,6 +78,22 @@ body{
 .each_product_details .product_div .details p{
     padding: 6px 0px;
 }
-.each_product_details .product_div .details span{
-    font-weight: bold;
+.main_container .contact_div .contact_us .contact_icons{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_container .contact_div .contact_us .contact_icons .bi{
+    background-color: rgba(155, 81, 224, 1);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.main_container .contact_div .contact_us .contact_icons .bi:hover{
+    scale: 1.04;
+    transition: all .2s ease-in-out;
 }
