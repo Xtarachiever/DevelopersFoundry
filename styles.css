@@ -29,6 +29,10 @@ section .events .event_header{
 .my_container nav .nav_div .nav_links{
     gap: 40px;
 }
+.my_container nav .nav_div .nav_links a:hover{
+    border-bottom: 2px solid rgb(129, 66, 223);
+    transition: all .2s ease-out;
+}
 .my_container main{
     margin-top: -80px;
 }
@@ -68,6 +72,7 @@ section .events .each_event{
 .boxes div{
     overflow: hidden;
     border-radius: 10px;
+    cursor: pointer;
 }
 .boxes div:hover img,
 .boxes div:hover .shadow_cover{

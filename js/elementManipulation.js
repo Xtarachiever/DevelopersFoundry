@@ -12,7 +12,7 @@ const createProductCard = () =>{
         each_event_div.className = 'event_cards';
         each_event_div.innerHTML = 
         `<div class="event_card">
-           <div class="img_wrapper"><img src=${product?.image} alt="tech4dev" /></div>
+           <div class="img_wrapper pt-3"><img src=${product?.image} alt="tech4dev" class="object-contain"/></div>
             <div class="event_content">
                 <p class="event_title">${product?.title}</p>
                 <p class="event_date">Sun, Oct 3rd <span class="dot">•</span> 6pm</p>
