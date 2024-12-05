@@ -1,6 +1,7 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    padding: 0;
 }
 .my_container{
     position: relative;
@@ -34,7 +35,7 @@ section .events .event_header{
     transition: all .2s ease-out;
 }
 .my_container main{
-    margin-top: -80px;
+    margin-top: -88px;
 }
 .my_container .main_div .main_div_content{
     flex-direction: row;
@@ -63,12 +64,12 @@ section .events .event_header{
     outline: none;
     padding: 10px;
 }
-section .events .each_event{
+/* section .events .each_event{
     padding: 25px 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
-}
+} */
 .boxes div{
     overflow: hidden;
     border-radius: 10px;
@@ -82,68 +83,13 @@ section .events .each_event{
 .boxes div:hover .shadow_cover{
     background-color: rgb(147, 83, 243,.3);
 }
-@media screen and (max-width:1800px) and (min-width:1124px){
-    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
-    section .events .each_event{
-        /* padding: 25px 0px;
-        display: grid; */
-        grid-template-columns: 1fr 1fr 1fr;
-        /* gap: 30px; */
-    }
-}
-section .events .each_event .event_card{
-    /* max-width: 340px; */
-    border: 1px solid rgb(237, 235, 239);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-}
-section .events .each_event .event_card:hover{
-    scale: 1.03;
-    cursor: pointer;
-    transition: all .3s ease-in;
-}
-section .events .each_event .event_card .img_wrapper{
-    text-align: center;
-    width: 100%;
-}
-section .events .each_event .event_card img{
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
-    margin: auto;
-}
-section .events .each_event .event_card .event_content{
-    padding: 20px;
-}
-section .events .each_event .event_card .event_content .dot{
-    padding: 0px 5px;
-}
-section .events .each_event .event_card .event_content p.event_title{
-    font-weight: 600;
-}
-section .events .each_event .event_card .event_content p.event_date{
-    padding-bottom: 10px;
-}
-section .events .each_event .event_card .event_content button{
-    background-color: transparent;
-    border: none;
-    padding: 0px;
-    padding-top: 15px;
-    color: rgba(118, 60, 207, 1);
-    cursor: pointer;
-}
-section .events .each_event .event_card .event_content button:hover{
-    color: rgb(30, 0, 75);
-    cursor: pointer;
-}
 footer p{
     padding-top: 6px;
 }
-footer div .sub_headers{
+/* footer div .sub_headers{
     cursor: pointer;
     font-size: 12px;
-}
+} */
 @media screen and (max-width:900px) {
     .my_container .main_div .main_div_content{
         justify-content: flex-end;
@@ -156,7 +102,7 @@ footer div .sub_headers{
         display: flex;
         flex-direction: column;
         z-index: 2;
-        gap: 12px;
+        gap: 10px;
     }
 }
 
@@ -174,9 +120,9 @@ footer div .sub_headers{
         justify-items: center;
         grid-template-columns: 1fr;
     }
-    section .events .each_event .event_card{
+    /* section .events .each_event .event_card{
         max-width: 400px;
-    }
+    } */
 }
 
 @media screen and (max-width:550px) {

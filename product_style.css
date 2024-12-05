@@ -71,10 +71,6 @@ body{
 .each_product_details .product_div .details .specific_event_details p .bi{
     color: rgba(155, 81, 224, 1);
 }
-
-.each_product_details .product_div .details .product_description{
-    font-size: 18px;
-}
 .each_product_details .product_div .details p{
     padding: 6px 0px;
 }
@@ -87,7 +83,7 @@ body{
     justify-content: center;
 }
 .main_container .contact_div .contact_us .contact_icons .bi{
-    background-color: rgba(155, 81, 224, 1);
+    background-color: rgba(120, 62, 173, 1);
     color: white;
     padding: 6px 10px;
     border-radius: 10px;
@@ -96,4 +92,10 @@ body{
 .main_container .contact_div .contact_us .contact_icons .bi:hover{
     scale: 1.04;
     transition: all .2s ease-in-out;
+}
+
+@media screen and (max-width:639px) {
+    .each_product_details{
+        padding-bottom: 600px;
+    }
 }

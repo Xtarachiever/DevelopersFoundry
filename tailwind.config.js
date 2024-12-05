@@ -10,7 +10,8 @@ module.exports = {
         'purple-button':'rgba(118, 60, 207, 1)',
         'footer':'rgba(67, 35, 97, 1)',
         black: '#000',
-        gray:'rgb(117, 117, 117)'
+        gray:'rgb(117, 117, 117)',
+        'light-gray':'rgb(237, 235, 239)'
       },
       boxShadow:{
         'md': 'inset 0 0 1000px rgba(255, 255, 255, 0.9)'
