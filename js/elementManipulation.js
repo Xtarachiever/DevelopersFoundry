@@ -15,7 +15,7 @@ const createProductCard = () =>{
            <div class="max-h-[200px] overflow-clip pt-3"><img src=${product?.image} alt="tech4dev" class="object-contain h-[200px] w-full"/></div>
             <div class="px-6 pt-4">
                 <p class="font-semibold">${product?.title}</p>
-                <p class="pb-3">Sun, Oct 3rd <span class="px-1">•</span> 6pm</p>
+                <p class="text-xs uppercase pb-3 pt-1">${product?.category}<span class="px-1">•</span><span class="px-1">${product?.rating?.rate} / 5.0 </span></p> 
                 <p>${truncateText(product?.description,100)}
                 </p>
                 <button class="view_details_${product?.id} bg-transparent border-none pt-[15px] text-purple-text cursor-pointer hover:text-button-hover cursor-pointer font-semibold" >
