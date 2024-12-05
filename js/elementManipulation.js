@@ -11,7 +11,7 @@ const createProductCard = () =>{
         const each_event_div = document.createElement("div");
         each_event_div.className = 'event_cards';
         each_event_div.innerHTML = 
-        `<div class="py-4 h-full hover:scale-105 cursor-pointer transition-all border border-light-gray rounded-lg">
+        `<div class="py-4 h-full hover:scale-102 cursor-pointer transition-all border border-light-gray rounded-lg">
            <div class="max-h-[200px] overflow-clip pt-3"><img src=${product?.image} alt="tech4dev" class="object-contain h-[200px] w-full"/></div>
             <div class="px-6 pt-4">
                 <p class="font-semibold">${product?.title}</p>
