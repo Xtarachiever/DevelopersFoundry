@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotLight</title>
+    <link href="./styles/compiled.css" rel="stylesheet">
+    <link href="./styles/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://fonts.cdnfonts.com/css/red-hat-display" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="bg-dark-blue w-full text-white fixed top-0 z-[2]">
+            <div class="shadow-xl p-8">
+                <div class="flex-row-between w-[88%] m-auto">
+                    <div class="flex-row-between gap-[90px]">
+                        <div class="flex-row-between gap-[10px] relative">
+                            <img src="./images/Logo.png" alt="logo" class="" />
+                            <span
+                                class="text-lg  after:content-[''] after:h-[48px] after:w-[1px] after:bg-gray2 after:hidden lg:after:block after:absolute after:-right-[40px] after:-top-[5px]">Spotlight</span>
+                        </div>
+                        <div class="hidden lg:flex justify-between gap-[60px] text-gray3">
+                            <a href="#">All Projects</a>
+                            <a href="#">About us</a>
+                            <a href="#">Start Project</a>
+                        </div>
+                    </div>
+                    <div class="hidden lg:flex gap-[40px]">
+                        <button class="gray-outline-btn">Login</button>
+                        <button class="blue-bg-btn">Create Account</button>
+                    </div>
+                    <div class="block hamburgers lg:hidden">
+                        <span class="hamburger block first_hamburger"></span>
+                        <span class="hamburger mt-1 block second_hamburger"></span>
+                        <span class="hamburger mt-1 block third_hamburger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown text-center flex flex-col block lg:hidden justify-between gap-[15px] text-gray3 py-6">
+                <a href="#">All Projects</a>
+                <a href="#">About us</a>
+                <a href="#">Start Project</a>
+                <div class="lg:hidden flex gap-[40px] justify-center pt-6">
+                    <button class="gray-outline-btn w-full max-w-[150px]">Login</button>
+                    <button class="blue-bg-btn w-full max-w-[150px]">Create Account</button>
+                </div>
+            </div>
+        </nav>
+        <main class="bg-cover relative pb-[100px] md:pb-[200px] bg-[url('../images/background.jpg')] bg-no-repeat">
+            <div class=" px-6 pt-[120px] w-[88%] m-auto md:flex-row-between 2xl:flex-row-center gap-[60px]">
+                <div class="max-w-[650px] flex-1">
+                    <div class="text-white pt-[40px] pb-8">
+                        <p class="text-peach uppercase text-sm font-semibold">INVEST smarter. Be part of the future </p>
+                        <p class="text-[2.5rem] lg:text-[3.4rem] lg:leading-[70px] py-4 font-bold max-w-[550px]">Invest in the future you
+                            believe in</p>
+                        <p class="pb-6 max-w-[340px] text-gray5">Access highly-vetted investment opportunities in
+                            movies, documentaries and cinema works </p>
+                        <div class="pb-10 flex-row-start gap-[40px]">
+                            <button class="blue-bg-btn font-semibold">Invest Now</button>
+                            <button class="white-outline-btn font-semibold">Start a campaign</button>
+                        </div>
+                        <div
+                            class="rounded-full border-2 border-white px-2 py-2 w-[64px] h-[64px] flex items-center justify-center">
+                            <img src="./images/arrow-right.svg" alt="arrow-right" class="w-fit"/>
+                        </div>
+                    </div>
+                    <div class="contact_us relative text-white flex-row-start gap-[20px]">
+                        <p class="relative w-[150px]">
+                            <span>FOLLOW US</span>
+                            <span
+                                class="after:w-[40px] after:h-[2px] after:content-[''] after:block after:absolute after:right-0 after:bg-white after:top-[10px]"></span>
+                        </p>
+                        <div class="flex-row-between gap-[20px]">
+                            <img src="./images/facebook.svg" alt="facebook" />
+                            <img src="./images/twitter.svg" alt="twitter" />
+                            <img src="./images/linkedin.svg" alt="linkedin" />
+                            <img src="./images/telegram.svg" alt="telegram" />
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blend-multiply relative w-[80%] md:w-[40%] h-[500px] lg:w-[500px] z-[1]">
+                    <img src="./images/img_bg.svg" alt="img" class="absolute top-[50%] -translate-y-[50%] right-0" />
+                    <img src="./images/video_img.svg" alt="video"
+                        class="absolute top-[50%] -translate-y-[50%] right-0" />
+                    <img src="./images/play_button.svg" alt="play" class="absolute-centering w-fit" />
+                </div>
+            </div>
+            <div
+                class="banner -bottom-[40px] shadow-xl text-center bg-white rounded-lg px-[40px] xl:px-[60px] py-4 flex-row-between w-[88%] xl:max-w-[1200px] horizontal-absolute-centering">
+                <p class="flex items-center">
+                    <span class="pr-4">Supported Cryptocurrencies</span>
+                    <span
+                        class="after:w-[40px] after:h-[2px] after:content-[''] after:block after:relative after:right-0 after:bg-gray after:top-[0px]"></span>
+                </p>
+                <div class="flex-row-start gap-[20px] lg:gap-[40px] xl:gap-[60px]">
+                    <img src="./images/bitcoin.jpg" alt="bitcoin" class="w-[40px] lg:w-fit"/>
+                    <img src="./images/gem.jpg" alt="gem" class="w-[40px] lg:w-fit"/>
+                    <img src="./images/tumblar.jpg" alt="tumblar" class="w-[40px] lg:w-fit"/>
+                    <img src="./images/Stellar.jpg" alt="Stellar" class="w-[40px] lg:w-fit"/>
+                    <img src="./images/diamond.jpg" alt="diamond" class="w-[40px] lg:w-fit"/>
+                    <img src="./images/crypto.jpg" alt="crypto" class="w-[40px] lg:w-fit"/>
+                </div>
+            </div>
+        </main>
+        <div class="pt-[50px] pb-[100px] mt-10 text-center w-[90%] m-auto">
+            <div>
+                <h1>Popular Projects</h1>
+                <p class="py-5">Check out our featured projects from promising directors and curations. Start investing
+                    now.</p>
+            </div>
+            <div class="grid grid-cols-fill-300 lg:grid-cols-4 gap-[20px]">
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_1.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">King of Boys</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_2.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">Flint</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_1.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">King of Boys</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_2.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">Flint</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_1.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">King of Boys</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_2.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">Flint</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_1.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">King of Boys</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                    <img src="./images/movie_2.jpg" alt="movie thumbnail" />
+                    <div class=" px-4 py-4">
+                        <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
+                            <div class="flex justify-between flex-col">
+                                <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
+                                <p class="font-semibold text-xl">Flint</p>
+                            </div>
+                            <div
+                                class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
+                                <p class="font-semibold text-2xl py-0 leading-6">25</p>
+                                <span class="text-xs my-0">Days left</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
+                                businesswoman and philanthropist with a checkered past and a promising political future.
+                            </p>
+                            <div class="flex-row-start gap-[20px] pb-3">
+                                <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
+                                <div>
+                                    <p class="text-[12px]">Fundraising Goal</p>
+                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                </div>
+                            </div>
+                            <div class="text-[12px]">
+                                <div class="pb-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Participate via:</span>
+                                    </p>
+                                    <div class="flex-row-start gap-[20px] pt-2">
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-orange-peach mr-2"></span>BTC</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-blue mr-2"></span>ETH</p>
+                                        <p class="flex-row-start border-gray border rounded-lg w-fit px-2"><span
+                                                class="dot bg-yellow mr-2"></span>BNB</p>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <p class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Hardcap: ETH 30,000,000</span>
+                                    </p>
+                                </div>
+                                <div class="py-2 flex-row-between">
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <span>Token - <span class="text-orange-peach font-semibold">$KOB</span></span>
+                                    </div>
+                                    <div class="flex-row-start">
+                                        <i class="bi bi-check-circle-fill text-blue mb-[5px] mr-[5px]"></i>
+                                        <p class="inline w-fit"><span class="font-bold">Stage:
+                                            </span><span>Presale</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/manipulatedStylings.js"></script>
+</body>
+
+</html>

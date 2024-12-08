@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('https://fonts.googleapis.com/css?family=Red Hat Display');
+}
+@layer base {
+    body {
+      @apply m-0 box-border
+    }
+    h1{
+        @apply text-3xl font-semibold;
+    }
+    img{
+        @apply w-full
+    }
+}
+
+@layer components {
+    .container {
+      @apply w-full m-auto max-w-full;
+    }
+    .blue-bg-btn{
+        @apply bg-gradient-to-r from-light-blue to-blue px-[16px] py-[12px] rounded-lg;
+    }
+    .gray-outline-btn{
+        @apply border-gray border-2 px-[16px] py-[12px] rounded-lg;
+    }
+    .white-outline-btn{
+        @apply border-white border-2 px-[16px] py-[12px] rounded-lg;
+    }
+    .flex-row-between{
+        @apply flex items-center justify-between;
+    }
+    .flex-row-start{
+        @apply flex items-center justify-start;
+    }
+    .flex-row-center{
+        @apply flex items-center justify-center;
+    }
+    .flex-col-start{
+        @apply flex flex-col;
+    }
+    .horizontal-absolute-centering{
+        @apply absolute -translate-x-[50%] left-[50%];
+    }
+    .absolute-centering{
+        @apply absolute top-[50%] -translate-x-[50%] -translate-y-[50%] left-[50%];
+    }
+    .dot{
+        @apply w-[4px] h-[4px] rounded-full block;
+    }
+    .hamburger{
+        @apply bg-white h-[2px] w-[20px];
+    }
+}
