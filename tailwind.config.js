@@ -35,8 +35,45 @@ module.exports = {
         '2':2
       },
       gridTemplateColumns: {
-        'fill-300': 'repeat(auto-fill, minmax(300px, 1fr))',
+        'fill-300': 'repeat(auto-fill, minmax(250px, 1fr))',
       },
+      keyframes:{
+        'scroll-left': {
+          '0%': {
+              transform: 'translateX(100%)'
+          },
+          '100%': {
+              transform: 'translateX(-100%)'
+          }
+        },
+        'scroll-down':{
+          '0%':{
+            transform: 'translateY(-20vw)'
+          },
+          '100%':{
+            transform: 'translateY(0%)'
+          }
+        },
+        'scale-circle1':{
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.2)' },
+        },
+        'scale-circle2':{
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(0.6)' },
+        },
+        'side-bounce':{
+          '0%': { transform: 'translateX(0px)'},
+          '100%': { transform: 'translateX(5px)' }
+        },
+      },
+      animation: {
+        'scroll-left': 'scroll-left  10s linear infinite',
+        'scroll-down': 'scroll-down  2s linear',
+        'scale-circle1':'scale-circle1 3s infinite ease-in-out',
+        'scale-circle2':'scale-circle2 3s infinite ease-in-out',
+        'side-bounce':'side-bounce 1s infinite ease-in-out'
+      }
     },
   },
   plugins: [],

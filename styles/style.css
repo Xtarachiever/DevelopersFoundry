@@ -1,3 +1,10 @@
 .arrow-icon::before{
     font-weight: 900 !important;
 }
+@media screen and (max-width:500px) {
+    .video_thumbnail{
+       height: 300px;
+       width: 100%;
+       margin-top: 20px;
+     }
+}

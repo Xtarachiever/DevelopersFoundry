@@ -13,8 +13,8 @@
 
 <body>
     <div class="container">
-        <nav class="bg-dark-blue w-full text-white fixed top-0 z-[2]">
-            <div class="shadow-xl p-8">
+        <nav class="bg-dark-blue w-full text-white fixed top-0 z-[10]">
+            <div class="shadow-xl py-8 p-4 sm:p-8">
                 <div class="flex-row-between w-[88%] m-auto">
                     <div class="flex-row-between gap-[90px]">
                         <div class="flex-row-between gap-[10px] relative">
@@ -39,17 +39,33 @@
                     </div>
                 </div>
             </div>
-            <div class="dropdown text-center flex flex-col block lg:hidden justify-between gap-[15px] text-gray3 py-6">
-                <a href="#">All Projects</a>
-                <a href="#">About us</a>
-                <a href="#">Start Project</a>
-                <div class="lg:hidden flex gap-[40px] justify-center pt-6">
-                    <button class="gray-outline-btn w-full max-w-[150px]">Login</button>
-                    <button class="blue-bg-btn w-full max-w-[150px]">Create Account</button>
-                </div>
-            </div>
         </nav>
+        <div class="dropdown fixed w-full bg-dark-blue text-center flex flex-col block lg:hidden justify-between gap-[15px] text-gray3 py-6">
+            <a href="#">All Projects</a>
+            <a href="#">About us</a>
+            <a href="#">Start Project</a>
+            <div class="lg:hidden flex gap-[30px] justify-center pt-4 px-2 flex-wrap">
+                <button class="gray-outline-btn w-full max-w-[150px]">Login</button>
+                <button class="blue-bg-btn w-full max-w-[150px]">Create Account</button>
+            </div>
+        </div>
         <main class="bg-cover relative pb-[100px] md:pb-[200px] bg-[url('../images/background.jpg')] bg-no-repeat">
+            <div class="flex-row-center bottom-[250px] left-[20px] sm:left-[180px] h-[100px] w-[100px] absolute">
+                <span class="absolute small_circle circle_1 z-[1]"></span>
+                <span class="absolute big_circle "></span>
+            </div>
+            <div class="flex-row-center top-[100px] md:top-auto sm:bottom-[180px] right-[20px] sm:left-[550px] h-[100px] w-[100px] absolute">
+                <span class="absolute small_circle z-[1]"></span>
+                <span class="absolute big_circle circle_2"></span>
+            </div>
+            <div class="flex-row-center top-[200px] md:top-auto right-0 sm:bottom-[120px] md:right-[465px] h-[100px] w-[100px] absolute">
+                <span class="absolute small_circle circle_1 z-[1]"></span>
+                <span class="absolute big_circle "></span>
+            </div>
+            <div class="flex-row-center bottom-[190px] right-[3px] h-[100px] w-[100px] absolute">
+                <span class="absolute small_circle z-[1]"></span>
+                <span class="absolute big_circle circle_2"></span>
+            </div>
             <div class=" px-6 pt-[120px] w-[88%] m-auto md:flex-row-between 2xl:flex-row-center gap-[60px]">
                 <div class="max-w-[650px] flex-1">
                     <div class="text-white pt-[40px] pb-8">
@@ -58,12 +74,12 @@
                             believe in</p>
                         <p class="pb-6 max-w-[340px] text-gray5">Access highly-vetted investment opportunities in
                             movies, documentaries and cinema works </p>
-                        <div class="pb-10 flex-row-start gap-[40px]">
+                        <div class="pb-10 flex-row-start gap-[40px] buttons">
                             <button class="blue-bg-btn font-semibold">Invest Now</button>
                             <button class="white-outline-btn font-semibold">Start a campaign</button>
                         </div>
                         <div
-                            class="rounded-full border-2 border-white px-2 py-2 w-[64px] h-[64px] flex items-center justify-center">
+                            class="arrow rounded-full border-2 border-white px-2 py-2 w-[64px] h-[64px] flex items-center justify-center cursor-pointer">
                             <img src="./images/arrow-right.svg" alt="arrow-right" class="w-fit"/>
                         </div>
                     </div>
@@ -71,9 +87,9 @@
                         <p class="relative w-[150px]">
                             <span>FOLLOW US</span>
                             <span
-                                class="after:w-[40px] after:h-[2px] after:content-[''] after:block after:absolute after:right-0 after:bg-white after:top-[10px]"></span>
+                                class="line after:w-[40px] after:h-[2px] after:content-[''] after:block after:absolute after:right-0 after:bg-white after:top-[10px]"></span>
                         </p>
-                        <div class="flex-row-between gap-[20px]">
+                        <div class="flex-row-between gap-[20px] social_icons">
                             <img src="./images/facebook.svg" alt="facebook" />
                             <img src="./images/twitter.svg" alt="twitter" />
                             <img src="./images/linkedin.svg" alt="linkedin" />
@@ -81,11 +97,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-blend-multiply relative w-[80%] md:w-[40%] h-[500px] lg:w-[500px] z-[1]">
+                <div class="bg-blend-multiply video_thumbnail relative w-[80%] md:w-[40%] h-[500px] lg:w-[500px] z-[1]">
                     <img src="./images/img_bg.svg" alt="img" class="absolute top-[50%] -translate-y-[50%] right-0" />
                     <img src="./images/video_img.svg" alt="video"
                         class="absolute top-[50%] -translate-y-[50%] right-0" />
-                    <img src="./images/play_button.svg" alt="play" class="absolute-centering w-fit" />
+                    <img src="./images/play_button.svg" alt="play" class="absolute-centering video_play_icon w-fit" />
                 </div>
             </div>
             <div
@@ -95,13 +111,15 @@
                     <span
                         class="after:w-[40px] after:h-[2px] after:content-[''] after:block after:relative after:right-0 after:bg-gray after:top-[0px]"></span>
                 </p>
-                <div class="flex-row-start gap-[20px] lg:gap-[40px] xl:gap-[60px]">
-                    <img src="./images/bitcoin.jpg" alt="bitcoin" class="w-[40px] lg:w-fit"/>
-                    <img src="./images/gem.jpg" alt="gem" class="w-[40px] lg:w-fit"/>
-                    <img src="./images/tumblar.jpg" alt="tumblar" class="w-[40px] lg:w-fit"/>
-                    <img src="./images/Stellar.jpg" alt="Stellar" class="w-[40px] lg:w-fit"/>
-                    <img src="./images/diamond.jpg" alt="diamond" class="w-[40px] lg:w-fit"/>
-                    <img src="./images/crypto.jpg" alt="crypto" class="w-[40px] lg:w-fit"/>
+                <div class="scrolling-container">
+                    <div class="flex-row-start scrolling-content gap-[25px] lg:gap-[40px] xl:gap-[60px]">
+                        <img src="./images/bitcoin.jpg" alt="bitcoin" class="w-[40px] lg:w-fit"/>
+                        <img src="./images/gem.jpg" alt="gem" class="w-[40px] lg:w-fit"/>
+                        <img src="./images/tumblar.jpg" alt="tumblar" class="w-[40px] lg:w-fit"/>
+                        <img src="./images/Stellar.jpg" alt="Stellar" class="w-[40px] lg:w-fit"/>
+                        <img src="./images/diamond.jpg" alt="diamond" class="w-[40px] lg:w-fit"/>
+                        <img src="./images/crypto.jpg" alt="crypto" class="w-[40px] lg:w-fit"/>
+                    </div>
                 </div>
             </div>
         </main>
@@ -111,14 +129,14 @@
                 <p class="py-5">Check out our featured projects from promising directors and curations. Start investing
                     now.</p>
             </div>
-            <div class="grid grid-cols-fill-300 lg:grid-cols-4 gap-[20px]">
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+            <div class="grid grid-cols-fill-300 lg:grid-cols-4 gap-[20px] pb-6 mb-10">
+                <div class="text-left card  bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_1.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">King of Boys</p>
+                                <p class="font-semibold text-lg sm:text-xl">King of Boys</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -130,11 +148,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -173,13 +191,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                <div class="text-left card bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_2.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">Flint</p>
+                                <p class="font-semibold sm:text-xl">Flint</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -191,11 +209,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -234,13 +252,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                <div class="text-left card bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_1.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">King of Boys</p>
+                                <p class="font-semibold sm:text-xl">King of Boys</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -252,11 +270,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -295,13 +313,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                <div class="text-left card bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_2.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">Flint</p>
+                                <p class="font-semibold sm:text-xl">Flint</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -313,11 +331,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -356,13 +374,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                <div class="text-left card bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_1.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">King of Boys</p>
+                                <p class="font-semibold sm:text-xl">King of Boys</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -374,11 +392,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -417,13 +435,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                <div class="text-left card bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_2.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">Flint</p>
+                                <p class="font-semibold sm:text-xl">Flint</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -435,11 +453,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -478,13 +496,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                <div class="text-left card bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_1.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">King of Boys</p>
+                                <p class="font-semibold sm:text-xl">King of Boys</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -496,11 +514,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -539,13 +557,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-left  bg-white shadow-xl rounded-2xl overflow-clip">
+                <div class="text-left card bg-white shadow-xl rounded-2xl overflow-clip">
                     <img src="./images/movie_2.jpg" alt="movie thumbnail" />
                     <div class=" px-4 py-4">
                         <div class="flex items-stretch h-full gap-[20px] justify-between py-3">
                             <div class="flex justify-between flex-col">
                                 <p class="pill bg-red text-white px-5 py-1 rounded-2xl w-fit text-[12px]">Drama</p>
-                                <p class="font-semibold text-xl">Flint</p>
+                                <p class="font-semibold sm:text-xl">Flint</p>
                             </div>
                             <div
                                 class="border-orange-peach text-center w-fit px-3 py-3 rounded-lg border bg-light-peach text-orange-peach ">
@@ -557,11 +575,11 @@
                             <p class="pb-3 text-[12px]">King of Boys follows the story of Alhaja Eniola Salami, a
                                 businesswoman and philanthropist with a checkered past and a promising political future.
                             </p>
-                            <div class="flex-row-start gap-[20px] pb-3">
+                            <div class="flex-row-start gap-[10px] sm:gap-[20px] pb-3">
                                 <img src="./images/eth.jpg" alt="eth" class="w-[40px]" />
                                 <div>
                                     <p class="text-[12px]">Fundraising Goal</p>
-                                    <p class="font-semibold text-xl">ETH 592,000,000</p>
+                                    <p class="font-semibold sm:text-xl">ETH 592,000,000</p>
                                 </div>
                             </div>
                             <div class="text-[12px]">
@@ -601,6 +619,7 @@
                     </div>
                 </div>
             </div>
+            <button class="blue-bg-btn text-white font-semibold rounded-xl px-6">View All Projects</button>
         </div>
     </div>
     <script src="./js/manipulatedStylings.js"></script>

@@ -20,10 +20,10 @@
 
 @layer components {
     .container {
-      @apply w-full m-auto max-w-full;
+      @apply w-full m-auto max-w-full min-w-[270px];
     }
     .blue-bg-btn{
-        @apply bg-gradient-to-r from-light-blue to-blue px-[16px] py-[12px] rounded-lg;
+        @apply bg-gradient-to-r from-light-blue to-blue px-[16px] py-[12px] rounded-lg cursor-pointer;
     }
     .gray-outline-btn{
         @apply border-gray border-2 px-[16px] py-[12px] rounded-lg;
@@ -54,5 +54,63 @@
     }
     .hamburger{
         @apply bg-white h-[2px] w-[20px];
+    }
+    /* .marquee{
+        @apply 
+    } */
+    .dropdown{
+        @apply absolute top-[100px] z-[2] w-full animate-scroll-down;
+    }
+    .small_circle{
+        @apply bg-white w-[30px] h-[30px] rounded-full block opacity-10;
+    }
+    .big_circle{
+        @apply bg-white w-[70px] h-[70px] rounded-full block opacity-5;
+    }
+    .circle_1{
+        @apply animate-scale-circle1;
+    }
+    .circle_2{
+        @apply animate-scale-circle2;
+    }
+    .video_thumbnail:hover .video_play_icon{
+        /* @apply animate-scale-circle2; */
+    }
+    .arrow:hover img{
+        @apply animate-side-bounce;
+    }
+    .social_icons img{
+        @apply p-1;
+    }
+    .social_icons img:hover{
+        @apply scale-[1.08] cursor-pointer bg-red rounded-full transition-all;
+    }
+    .card:hover{
+        @apply cursor-pointer;
+    }
+    @media screen and (max-width:800px){
+        .scrolling-container {
+            @apply overflow-hidden whitespace-nowrap relative;
+        }
+        
+        .scrolling-content {
+            @apply flex animate-scroll-left;
+        }
+    }
+    @media screen and (max-width:500px){
+        .banner{
+            @apply flex flex-col gap-4;
+        }
+        .line{
+            @apply hidden;
+        }
+        .contact_us{
+            @apply flex-col items-start;
+        }
+    }
+    @media screen and (max-width:400px){
+        .buttons{
+            @apply flex-col items-start;
+        }
     }
 }

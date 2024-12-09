@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             firstHamburger.classList.remove('rotate-45');
             thirdHamburger.classList.remove('-rotate-45', '-mt-[2px]')
             thirdHamburger.classList.add('mt-1');
-            dropDown.classList.replace('block','hidden')
+            dropDown.classList.replace('block','hidden');
         }else{
             secondHamburger.classList.replace('block','hidden');
             firstHamburger.classList.add('rotate-45');
