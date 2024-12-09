@@ -1197,6 +1197,10 @@ img {
   background-color: rgba(243, 186, 47, 1);
 }
 
+.bg-light-blue {
+  background-color: rgba(68, 137, 252, 1);
+}
+
 .bg-\[url\(\'\.\.\/images\/background\.jpg\'\)\] {
   background-image: url('../images/background.jpg');
 }
