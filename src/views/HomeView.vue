@@ -1,9 +1,9 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+<script>
+export default {
+  data() {
+    return 'Hello'
+  },
+}
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<template></template>
