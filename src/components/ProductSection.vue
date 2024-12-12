@@ -1,13 +1,13 @@
 <template>
   <section class="sm:pb-[40px]">
     <div class="events pt-10 w-[90%] m-auto max-w-[1800px]">
-      <div class="flex-col sm:flex-row-justify-between">
+      <div class="flex-col items-start sm:flex-row-justify-between">
         <p class="text-[20px] font-semibold">Trending events</p>
-        <a href="#" class="text-purple-text"
+        <a href="#" class="text-purple-text flex justify-end self-end"
           >View all trending events <i class="bi bi-arrow-up-right"></i
         ></a>
       </div>
-      <div class="grid grid-column-repeat lg:grid-cols-3 gap-[30px] py-8">
+      <div class="grid grid-column-repeat lg:lg:grid-cols-3 gap-[30px] py-8">
         <ProductCard
           v-for="product in products"
           :name="product?.name"

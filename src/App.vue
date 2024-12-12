@@ -21,8 +21,14 @@ export default {
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div> -->
-  <HomeView />
+  <div class="container">
+    <HomeView />
+  </div>
   <!-- <RouterView /> -->
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  @apply min-w-[280px] m-auto max-w-full;
+}
+</style>
