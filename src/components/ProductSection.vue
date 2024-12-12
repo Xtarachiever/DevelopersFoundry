@@ -1,9 +1,9 @@
 <template>
   <section class="sm:pb-[40px]">
     <div class="events pt-10 w-[90%] m-auto max-w-[1800px]">
-      <div class="flex-col items-start sm:flex-row-justify-between">
+      <div class="trending_event_header">
         <p class="text-[20px] font-semibold">Trending events</p>
-        <a href="#" class="text-purple-text flex justify-end self-end"
+        <a href="#" class="text-purple-text trending_event_header_link"
           >View all trending events <i class="bi bi-arrow-up-right"></i
         ></a>
       </div>
