@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .flex-row-justify-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-row-justify-center {
+    @apply flex items-center justify-center;
+  }
+  .desktop a:hover {
+    color: rgb(129, 66, 223);
+    border-bottom: 2px solid rgb(129, 66, 223);
+  }
+  .mobile {
+    @apply hidden;
+  }
+  .main_div_content {
+    @apply flex flex-row items-end h-[90%] w-[90%] m-auto text-white justify-between gap-[20px] z-[2];
+  }
+  .categories_section::before {
+    @apply block content-[''] w-[2px] h-[40px] bg-gray1 relative left-[20px];
+  }
+  .grid-column-repeat {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  .auth_div {
+    @apply relative flex;
+  }
+  .hamburgers {
+    @apply hidden;
+  }
+
+  @media screen and (max-width: 880px) {
+    .main_div_content {
+      @apply flex-col justify-end;
+    }
+    .desktop {
+      @apply hidden;
+    }
+    .mobile {
+      @apply flex flex-col justify-between gap-[14px];
+    }
+    .main_div_content p {
+      @apply text-right;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .main_div_content p {
+      @apply leading-6;
+    }
+  }
+  @media screen and (max-width: 530px) {
+    .main_div_content .filter_options {
+      @apply hidden;
+    }
+    .auth_div {
+      @apply bg-white/[0.7] w-[60%] py-6 gap-[10px] absolute top-[56px] flex-col right-[10px];
+    }
+    .hamburgers {
+      @apply block;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .footer_right_contents {
+      @apply flex-wrap justify-start;
+    }
+  }
+}

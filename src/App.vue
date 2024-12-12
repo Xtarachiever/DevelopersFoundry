@@ -1,15 +1,18 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
+import HomeView from './views/HomeView.vue'
 import './assets/tailwind.css'
 export default {
   data() {
     return {}
   },
+  components: {
+    HomeView,
+  },
 }
 </script>
 
 <template>
-  <div class="">hiiii</div>
   <!-- <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
@@ -18,7 +21,8 @@ export default {
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div> -->
-  <RouterView />
+  <HomeView />
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped></style>
