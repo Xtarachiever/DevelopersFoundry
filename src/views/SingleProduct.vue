@@ -57,7 +57,7 @@ export default {
       try {
         const prevId = +this.id - 1
         if (prevId > 0) {
-          const res = await this.axios.get(`${this.url}/${+this.id + 1}`)
+          const res = await this.axios.get(`${this.url}/${+this.id - 1}`)
           this.$router.push({ name: 'SingleProduct', params: { id: prevId } })
           this.product = res.data
         }
@@ -72,11 +72,11 @@ export default {
     this.viewDetails()
     this.getProductsLength()
   },
-  watch: {
-    id(newId) {
-      this.viewDetails()
-    },
-  },
+  // watch: {
+  //   id(newId) {
+  //     this.viewDetails()
+  //   },
+  // },
 }
 </script>
 
