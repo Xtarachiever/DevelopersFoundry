@@ -26,13 +26,16 @@
     @apply block content-[''] w-[2px] h-[40px] bg-gray1 relative left-[20px];
   }
   .grid-column-repeat {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   }
   .auth_div {
     @apply relative flex;
   }
   .hamburgers {
     @apply hidden;
+  }
+  .events {
+    @apply w-[90%];
   }
 
   @media screen and (max-width: 880px) {
@@ -49,7 +52,7 @@
       @apply text-right;
     }
     .trending_event_header {
-      @apply flex flex-col items-start;
+      @apply flex flex-col items-start px-4;
     }
     .trending_event_header_link {
       @apply flex justify-end self-end;
@@ -74,6 +77,9 @@
   @media screen and (max-width: 350px) {
     .footer_right_contents {
       @apply flex-wrap justify-start;
+    }
+    .events {
+      @apply w-full;
     }
   }
 }

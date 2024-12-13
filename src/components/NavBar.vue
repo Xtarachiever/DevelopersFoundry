@@ -1,9 +1,11 @@
 <template>
   <nav class="shadow-md px-7 py-4 rounded-2xl w-[95%] sm:w-[90vw] m-auto sticky top-[50px] z-[10]">
     <div class="flex-row-justify-between">
-      <p class="text-purple-text text-md sm:text-xl md:text-2xl font-semibold cursor-pointer">
-        rendezvous
-      </p>
+      <RouterLink to="/">
+        <p class="text-purple-text text-md sm:text-xl md:text-2xl font-semibold cursor-pointer">
+          rendezvous
+        </p>
+      </RouterLink>
       <div class="flex-row-justify-center gap-[40px] desktop text-purple-text font-semibold">
         <a href="#">Discover</a>
         <a href="#">About us</a>
