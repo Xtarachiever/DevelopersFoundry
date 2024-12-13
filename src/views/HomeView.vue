@@ -5,9 +5,6 @@ import ProductSection from '../components/ProductSection.vue'
 import DiscoverEvents from '../components/DiscoverEvents.vue'
 import Footer from '../components/Footer.vue'
 export default {
-  data() {
-    return 'Hello'
-  },
   components: {
     NavBar,
     BannerSection,

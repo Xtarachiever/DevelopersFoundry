@@ -15,7 +15,7 @@ export default {
   },
   props: ['id'],
   methods: {
-    async viewDetails() {
+    async getSingleProduct() {
       this.isLoading = true
       try {
         const res = await this.axios.get(`${this.url}/${this.id}`)
@@ -38,45 +38,28 @@ export default {
       }
     },
     async getNextProduct() {
-      this.isLoading = true
-      try {
-        const nextId = +this.id + 1
-        if (nextId <= this.productsLength) {
-          const res = await this.axios.get(`${this.url}/${+this.id + 1}`)
-          this.$router.push({ name: 'SingleProduct', params: { id: nextId } })
-          this.product = res.data
-        }
-      } catch (err) {
-        console.log(err?.message)
-      } finally {
-        this.isLoading = false
+      const nextId = +this.id + 1
+      if (nextId <= this.productsLength) {
+        this.$router.push({ name: 'SingleProduct', params: { id: nextId } })
       }
     },
+
     async getPrevProduct() {
-      this.isLoading = true
-      try {
-        const prevId = +this.id - 1
-        if (prevId > 0) {
-          const res = await this.axios.get(`${this.url}/${+this.id - 1}`)
-          this.$router.push({ name: 'SingleProduct', params: { id: prevId } })
-          this.product = res.data
-        }
-      } catch (err) {
-        console.log(err?.message)
-      } finally {
-        this.isLoading = false
+      const prevId = +this.id - 1
+      if (prevId > 0) {
+        this.$router.push({ name: 'SingleProduct', params: { id: prevId } })
       }
     },
   },
   mounted() {
-    this.viewDetails()
+    this.getSingleProduct()
     this.getProductsLength()
   },
-  // watch: {
-  //   id(newId) {
-  //     this.viewDetails()
-  //   },
-  // },
+  watch: {
+    id() {
+      this.getSingleProduct()
+    },
+  },
 }
 </script>
 
@@ -179,13 +162,13 @@ export default {
 </template>
 
 <style scoped>
-.main_container .contact_div .contact_us .contact_icons {
+.contact_icons {
   @apply my-[8px] gap-[20px] flex items-center justify-center;
 }
-.main_container .contact_div .contact_us .contact_icons .bi {
+.contact_icons .bi {
   @apply bg-purple-button text-white py-[6px] px-[10px] rounded-lg cursor-pointer;
 }
-.main_container .contact_div .contact_us .contact_icons .bi:hover {
+.contact_icons .bi:hover {
   @apply scale-102 transition-all duration-200 ease-in-out;
 }
 .specific_event_details p {
@@ -195,7 +178,6 @@ export default {
   @apply text-purple-text;
 }
 .navigation_button .bi {
-  font-size: 34px;
-  cursor: pointer;
+  @apply text-[34px] cursor-pointer;
 }
 </style>

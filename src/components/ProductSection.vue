@@ -14,16 +14,7 @@
         v-else-if="products.length"
         class="grid grid-column-repeat lg:lg:grid-cols-3 gap-[30px] py-8"
       >
-        <ProductCard
-          v-for="product in products"
-          :key="product.id"
-          :name="product.title"
-          :img="product.image"
-          :description="product.description"
-          :id="product.id"
-          :category="product.category"
-          :rating="product.rating.rate"
-        />
+        <ProductCard v-for="product in products" :key="product.id" :product="product" />
       </div>
       <div v-else>No products found</div>
     </div>

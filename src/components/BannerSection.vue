@@ -1,6 +1,6 @@
 <template>
   <div
-    class="main_div w-full -mt-[80px] bg-[url('/concert-stage.jpg')] bg-cover bg-center w-[100vw] max-h-[800px] h-[500px] sm:h-[600px] relative z-0 min-w-[250px]"
+    class="main_div -mt-[80px] bg-[url('/concert-stage.jpg')] bg-cover bg-center w-[100vw] max-h-[800px] h-[500px] sm:h-[600px] relative z-0 min-w-[250px]"
   >
     <div class="bg-black opacity-40 z-1 w-full h-full absolute top-0 block"></div>
     <div class="main_div_content relative">
