@@ -6,7 +6,7 @@
       <img :src="product.image" :alt="product.name" class="h-full w-[250px] m-auto" />
     </div>
     <div class="px-6 pt-4">
-      <p class="font-semibold">{{ product.name }}</p>
+      <p class="font-semibold">{{ product.title }}</p>
       <p class="text-xs uppercase pb-3 pt-1">
         {{ product.category }}
         <span class="px-1">•</span>

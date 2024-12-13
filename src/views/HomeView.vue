@@ -3,14 +3,14 @@ import NavBar from '../components/NavBar.vue'
 import BannerSection from '../components/BannerSection.vue'
 import ProductSection from '../components/ProductSection.vue'
 import DiscoverEvents from '../components/DiscoverEvents.vue'
-import Footer from '../components/Footer.vue'
+import CustomFooter from '../components/Footer.vue'
 export default {
   components: {
     NavBar,
     BannerSection,
     ProductSection,
     DiscoverEvents,
-    Footer,
+    CustomFooter,
   },
 }
 </script>
@@ -23,7 +23,7 @@ export default {
       <ProductSection />
       <DiscoverEvents />
     </div>
-    <Footer />
+    <CustomFooter />
   </div>
 </template>
 
