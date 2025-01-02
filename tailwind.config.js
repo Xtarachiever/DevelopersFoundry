@@ -12,6 +12,10 @@ module.exports = {
       'dull_gray':'#939285',
       'stained_white':'#C3C3C2',
       'gray2':'#4347C1'
+      },
+      zIndex:{
+        '10':'10',
+        '99':'99'
       }
     },
   },
