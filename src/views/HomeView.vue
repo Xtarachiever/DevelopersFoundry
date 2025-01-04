@@ -4,7 +4,7 @@ k<template>
       <NavBarVue />
     </div>
     <div class="relative min-h-[100vh]">
-      <div class="border-r border-gray w-[350px] fixed top-0 h-full flex pt-[80px]" :class="collapse ? '-left-[320px]' : 'left-0'">
+      <div class="border-r border-gray z-[2] w-[350px] fixed top-0 h-full flex pt-[80px]" :class="collapse ? '-left-[320px]' : 'left-0'">
         <SideBarVue />
         <div class="absolute top-[120px] -right-[25px] z-[10] bg-white py-1 w-[50px] rounded-lg cursor-pointer" v-on:click="collapseSideBar()">
           <v-icon name="md-arrowleft-round" class="text-black" scale="2.4"></v-icon>
@@ -25,7 +25,7 @@ import SideBarVue from '../components/layout/SideBar.vue'
 export default {
   data(){
     return{
-      collapse: true
+      collapse: false
     }
   },
   components:{

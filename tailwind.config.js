@@ -11,7 +11,11 @@ module.exports = {
       'dark_gray':'#5E565A',
       'dull_gray':'#939285',
       'stained_white':'#C3C3C2',
-      'gray2':'#4347C1'
+      'gray2':'#4347C1',
+      'orange':'#ffa500'
+      },
+      gridTemplateColumns: {
+        'fill-300': 'repeat(auto-fill, minmax(270px, 1fr))',
       },
       zIndex:{
         '10':'10',
