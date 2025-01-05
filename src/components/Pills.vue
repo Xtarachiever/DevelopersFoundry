@@ -1,5 +1,5 @@
 <template>
-  <p :class="unselected ? 'dullColor' : name" class="w-fit text-white rounded-[20px] px-3 py-1 text-sm font-semibold">{{ name }}</p>
+  <p :class="unselected ? 'dullColor' : name" class="w-fit text-white rounded-[20px] px-3 py-1 text-sm font-semibold">{{ truncateText(name,8) }}</p>
 </template>
 
 <script>
@@ -13,11 +13,16 @@ export default {
 .Romance{
     background: orange;
 }
-.Thriller{
+.Thriller,
+.Drama{
     background: purple;
 }
-.SciFi{
+.Sci-Fi,
+.Adventure{
     background: rgb(0, 71, 98);
+}
+.Comedy{
+    background: rgb(97, 50, 163);
 }
 .dullColor{
     background: #09080A;

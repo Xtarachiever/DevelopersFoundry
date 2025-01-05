@@ -4,7 +4,7 @@
     class="relative bg-cover bg-start max-w-[380px] h-[250px] bg-no-repeat rounded-[20px] overflow-clip">
         <div class="absolute left-[20px] top-[10px] text-orange font-bold">
             <v-icon name="gi-flamed-leaf" color="orange"></v-icon>
-            <span class="ml-1 font-bold">{{ rated }}</span>
+            <span class="ml-1 font-bold">{{ rank }}</span>
         </div>
         <div class="movies_details_div absolute bottom-[0] px-6 text-left bg-opacity-65 py-2 w-full pb-[50px]" :class="more ? 'h-full' : 'h-auto'">
             <div class="">
@@ -12,7 +12,10 @@
                     <v-icon name="hi-solid-play" class="text-primary_dark" scale="2"></v-icon>
                     <div class="font-bold">
                         <p>{{ more ? name : truncatedName }}</p>
-                        <span>{{ type }}</span>
+                        <div class="flex gap-[10px] mt-2">
+                            <PillsVue v-for="genre in slicedGenre" :name="genre" :key="genre"/>
+                        </div>
+                        <!-- <span>{{ type }}</span> -->
                     </div>
                 </div>
                 <div :class="more ? 'block pt-4 m-auto' : 'hidden'">
@@ -33,26 +36,37 @@
 </template>
 
 <script>
+import PillsVue from './Pills.vue'
 export default {
     data(){
         return{
-            more: false
+            more: false,
+            slicedGenre:[]
         }
+    },
+    mounted(){
+        this.sliceGenres()
+    },
+    components:{
+        PillsVue
     },
     methods:{
         async handleMoreDetails(){
             this.more = !this.more
-        }
+        },
+        async sliceGenres(){
+            this.slicedGenre = this.genres.slice(0,2)
+        },
     },
     computed:{
         truncatedName(){
-            if(this.name.length > 15){
-                return this.name.slice(0, 15) + "..."
+            if(this?.name?.length > 15){
+                return this?.name?.slice(0, 15) + "..."
             }
-            return this.name
+            return this?.name
         }
     },
-    props:["imageUrl","rank","name","type","rated","aired","members","id"],
+    props:["imageUrl","rank","name","type","rated","aired","members","id","genres"],
 }
 </script>
 
