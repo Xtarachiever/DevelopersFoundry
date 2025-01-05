@@ -40,7 +40,7 @@ export default {
   },
   computed:{
     animes(){
-      return this.$store.getters.getAllAnimes?.filter((anime)=> anime.status === 'Finished Airing').slice(0,4)
+      return this.$store.getters?.getAllAnimes?.filter((anime)=> anime.status === 'Finished Airing').slice(0,4)
     }
   },
 }

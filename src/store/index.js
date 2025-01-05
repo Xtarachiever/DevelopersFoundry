@@ -2,8 +2,8 @@ import { createStore } from "vuex";
 
 const url = 'https://anime-db.p.rapidapi.com/anime'
 const headers= {
-    'x-rapidapi-key': process.env.VUE_APP_RAPID_API_KEY,
-    'x-rapidapi-host': process.env.VUE_APP_RAPID_API_HOST
+    'x-rapidapi-key': import.meta.env.VUE_APP_RAPID_API_KEY,
+    'x-rapidapi-host': import.meta.env.VUE_APP_RAPID_API_HOST
 }
 export default createStore({
     state:{
