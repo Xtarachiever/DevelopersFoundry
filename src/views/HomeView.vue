@@ -75,13 +75,18 @@ export default {
       this.pageNo--
       await this.fetchAllAnime();
     },
+    // async fetchAnimesOnSearch(){
+    //   const input = 
+    // },
     async fetchHighRatedAnime() {
-      this.$store.commit("setAnimeId", '1');
+      // this.$store.commit("setAnimeId", '1');
       await this.$store.dispatch("setSingleAnime", '1');
     },
     async fetchAllAnime(){
-      this.$store.commit("setAnimesArray", this.pageNo);
-      await this.$store.dispatch("setAnimesArray", this.pageNo)
+      const payload = {
+        page: this.pageNo
+      };
+      await this.$store.dispatch("setAnimesArray", payload)
     }
   }
 }

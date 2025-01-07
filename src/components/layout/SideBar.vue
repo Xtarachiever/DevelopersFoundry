@@ -4,7 +4,7 @@
     <p>No Data Found</p>
   </div>
   <div class="px-4 py-4 overflow-scroll relative" v-else>
-    <p class="text-white text-left">New trailers</p>
+    <p class="text-white text-left">Completed Series</p>
     <div class="grid gap-[30px]">
       <TrailerMovieCard v-for="anime in animes" :key="anime" :name="anime.title" :imageUrl="anime.image" :views="anime.type" :eps="anime.episodes" />
     </div>

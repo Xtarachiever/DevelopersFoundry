@@ -2,10 +2,11 @@ import { createStore } from "vuex";
 
 const url = 'https://anime-db.p.rapidapi.com/anime'
 const headers= {
-    'x-rapidapi-key': import.meta.env.VUE_APP_RAPID_API_KEY,
-    'x-rapidapi-host': import.meta.env.VUE_APP_RAPID_API_HOST,
+    'x-rapidapi-key': import.meta.env.VITE_APP_RAPID_API_KEY,
+    'x-rapidapi-host': import.meta.env.VITE_APP_RAPID_API_HOST,
     'Accept': 'application/json'
 }
+
 export default createStore({
     state:{
         singleAnime: localStorage.getItem("singleAnime") 
@@ -35,17 +36,13 @@ export default createStore({
     },
     actions:{
         // Asynchronous actions
-        async setAnimesArray(state,page){
+        async setAnimesArray(state,{page, search,genres}){
             state.commit("setLoading", true)
             try{
                 let pageNo = page || '1'
-                await fetch(`${url}?page=${pageNo}&size=20&sortOrder=asc
+                await fetch(`${url}?page=${pageNo}&size=20${search ? `&search=${search}` : ''}${genres ? `&genres=${genres}` : ''}&sortOrder=asc
                 `,{
-                    headers:{
-                        'x-rapidapi-key': '497e569fd7msh7a4db1e1e1810aap1c1b31jsnff98201069f4',
-                        'x-rapidapi-host': 'anime-db.p.rapidapi.com',
-                        'Accept': 'application/json'
-                    }
+                    headers
                 })
                 .then((data)=>data.json())
                 .then((res)=>state.commit("setAnimesArray",res.data))
@@ -59,11 +56,7 @@ export default createStore({
             let animeId = this.state.id || id
             await fetch(`${url}/by-id/${animeId}
             `,{
-                headers:{
-                    'x-rapidapi-key': '497e569fd7msh7a4db1e1e1810aap1c1b31jsnff98201069f4',
-                    'x-rapidapi-host': 'anime-db.p.rapidapi.com',
-                    'Accept': 'application/json'
-                }
+                headers
             })
             .then((data)=>data.json())
             .then((res)=>state.commit("setSingleAnime",res))
