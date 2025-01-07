@@ -4,14 +4,14 @@ k<template>
       <NavBar />
     </div>
     <div class="relative min-h-[100vh]">
-      <div class="border-r border-gray z-[2] w-[350px] fixed top-0 h-full flex pt-[80px]" :class="collapse ? '-left-[320px]' : 'left-0'">
+      <div class="border-r border-gray z-[2] pr-[20px] w-full max-w-[350px] fixed top-0 h-full flex pt-[80px] bg-primary_dark" :class="collapse ? 'sidebar_collapse' : 'left-0'">
         <SideBar />
-        <div class="absolute top-[120px] -right-[25px] z-[10] bg-white py-1 w-[50px] rounded-lg cursor-pointer" v-on:click="collapseSideBar()">
+        <div class="absolute top-[120px] -right-[10px] sm:-right-[25px] z-[10] bg-white py-1 w-[50px] rounded-lg cursor-pointer" v-on:click="collapseSideBar()">
           <v-icon name="md-arrowleft-round" class="text-black" scale="2.4"></v-icon>
           <!-- <v-icon name="io-search" class="text-black" scale="2"></v-icon> -->
         </div>
       </div>
-      <div :class="collapse ? 'ml-[50px]' : 'ml-[350px]'">
+      <div :class="collapse ? 'ml-[25px] sm:ml-[50px]' : 'ml-[10px] md:ml-[350px]'">
         <slot></slot>
       </div>
     </div>
@@ -78,4 +78,15 @@ export default {
   @keyframes l30 {
     100% {transform: rotate(-1turn)}
   }
+
+  .sidebar_collapse{
+    left: -320px;
+  }
+
+  @media screen and (max-width:360px){
+    .sidebar_collapse{
+      left: -90%;
+    }
+  }
+
 </style>

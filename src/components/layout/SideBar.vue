@@ -11,7 +11,7 @@
     <div class="text-left text-white pt-6">
       <p>Favorite genres</p>
       <div>
-         <div class="flex gap-[10px] py-3">
+         <div class="flex gap-[10px] py-3 flex-wrap">
            <Pills name="Action"/>
            <Pills name="Thriller"/>
            <Pills name="Sci-Fi"/>
@@ -40,7 +40,11 @@ export default {
   },
   computed:{
     animes(){
-      return this.$store.getters?.getAllAnimes?.filter((anime)=> anime.status === 'Finished Airing').slice(0,4)
+      const storedAnimes = this.$store.getters.getAllAnimes || [];
+      return Array.isArray(storedAnimes)
+        ? storedAnimes.filter((anime) => anime.status === "Finished Airing").slice(0, 4)
+        : [];
+      // return this.$store.getters.getAllAnimes?.filter((anime)=> anime.status === 'Finished Airing').slice(0,4)
     }
   },
 }

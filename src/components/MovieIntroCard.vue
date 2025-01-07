@@ -1,18 +1,18 @@
 <template>
     <div
     :style="{ backgroundImage: `url(${imageUrl})` }"
-    class="relative bg-cover bg-start max-w-[380px] h-[250px] bg-no-repeat rounded-[20px] overflow-clip">
+    class="relative bg-cover bg-start max-w-[380px] w-full h-[250px] bg-no-repeat rounded-[20px] overflow-clip">
         <div class="absolute left-[20px] top-[10px] text-orange font-bold">
             <v-icon name="gi-flamed-leaf" color="orange"></v-icon>
             <span class="ml-1 font-bold">{{ rank }}</span>
         </div>
         <div class="movies_details_div absolute bottom-[0] px-6 text-left bg-opacity-65 py-2 w-full pb-[50px]" :class="more ? 'h-full' : 'h-auto'">
             <div class="">
-                <div class="flex items-center gap-[20px]">
+                <div class="movie_name_flex" :class="more ? 'movie_name_hidden' : 'movie_name_flex'">
                     <v-icon name="hi-solid-play" class="text-primary_dark" scale="2"></v-icon>
                     <div class="font-bold">
                         <p>{{ more ? name : truncatedName }}</p>
-                        <div class="flex gap-[10px] mt-2">
+                        <div class="flex gap-[10px] mt-2 flex-wrap">
                             <PillsVue v-for="genre in slicedGenre" :name="genre" :key="genre"/>
                         </div>
                         <!-- <span>{{ type }}</span> -->
@@ -75,5 +75,15 @@ export default {
     background: #ffffff88;
     backdrop-filter: blur(16px);
     color: #09080A;
+}
+.movie_name_flex{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+@media screen and (max-width:300px) {
+    .movie_name_hidden{
+        display: none;
+    }
 }
 </style>
