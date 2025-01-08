@@ -5,21 +5,11 @@
         </div>
         <div class="w-[55%] pt-[60px] relative">
             <div class="text-cyan_blue px-8 absolute left-[50%] top-[100px] w-full max-w-[600px] -translate-x-[50%]">
-                <p class="text-[1.5rem] font-semibold py-3">Create your free account</p>
-                <p><span class="">Already registered?</span><span class="text-green"> Sign in</span></p>
-                <Transition name="slide-fade">
-                    <RegistrationForm v-if="name === 'form1'" :handleFormChanges="handleFormChanges" />
-                </Transition>
-                <Transition name="slide-fade">
-                    <RegistrationForm2 v-if="name === 'form2'" :handleFormChanges="handleFormChanges" />
-                </Transition>
-                <Transition name="slide-fade">
-                    <SuccessFormVue v-if="name === 'form3'" ::handleFormChanges="handleFormChanges" />
-                </Transition>
+                <slot />
             </div>
             <div
                 class="flex flex-wrap justify-between w-[90%] left-[50%] -translate-x-[50%] absolute bottom-[30px] text-sm gap-y-2">
-                <p>By siging up, you agree to our <span class="text-green">Terms</span> and <span class="text-green">Privacy
+                <p>By signing up, you agree to our <span class="text-green">Terms</span> and <span class="text-green">Privacy
                         Policy</span></p>
                 <p>© 2019 Tinylabs. All rights reserved.</p>
             </div>
@@ -36,13 +26,7 @@ import SuccessFormVue from '../SuccessForm.vue';
 export default {
     data() {
         return {
-            images: ['slide_img1.jpg', 'slide_img2.jpg'],
-            name: 'form1'
-        }
-    },
-    methods: {
-        handleFormChanges(formName) {
-            this.name = formName
+            images: ['/slide_img1.jpg', '/slide_img2.jpg'],
         }
     },
     components: {

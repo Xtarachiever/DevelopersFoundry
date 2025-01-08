@@ -1,6 +1,10 @@
 <template>
-    <div class="bg-white rounded-md px-8 mt-[30px] py-6 max-w-[600px] form_div pt-[40px] w-full">
-        <div class="gap-y-[20px] flex flex-col">
+    <div class="bg-white relative rounded-md px-8 mt-[30px] py-6 max-w-[600px] form_div pt-[40px] w-full">
+        <!-- <div class="text-green absolute top-[15px] left-[20px] cursor-pointer flex items-center gap-[5px]" >
+            <v-icon name="bi-arrow-left" ></v-icon>
+            <span class="text-xs">Back</span>
+        </div> -->
+        <div class="gap-y-[20px] flex flex-col pt-[10px]">
         <div class="flex items-center justify-between gap-x-[30px] gap-y-[50px]">
             <InputDiv name="firstName" label="First Name" v-model="firstName" icon="pr-user"/>
             <InputDiv name="lastName" label="Last Name" v-model="lastName" icon="pr-user"/>

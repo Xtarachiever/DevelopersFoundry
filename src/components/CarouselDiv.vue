@@ -24,7 +24,7 @@ export default {
   props: ["images"],
   data() {
     return {
-      selected: 'slide_img1.jpg',
+      selected: '/slide_img1.jpg',
       intervalId: null,
       currentIndex: 0
     }

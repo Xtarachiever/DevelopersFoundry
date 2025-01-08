@@ -1,6 +1,10 @@
 <template>
-    <div class="bg-white form_div rounded-md pt-[40px] px-8 mt-[30px] py-6 max-w-[600px] w-full">
-        <div class="gap-y-[20px] flex flex-col">
+    <div class="bg-white relative form_div rounded-md pt-[40px] px-8 mt-[30px] py-6 max-w-[600px] w-full">
+        <div class="text-green absolute top-[15px] left-[20px] cursor-pointer flex items-center gap-[5px]" @click="handleFormChanges('form1')">
+            <v-icon name="bi-arrow-left" ></v-icon>
+            <span class="text-xs">Back</span>
+        </div>
+        <div class="gap-y-[20px] flex flex-col pt-[10px]">
             <InputDiv name="businessName" label="Business Name" v-model="businessName" icon="ri-building-2-line" />
             <InputDiv name="businessAddress" label="Business Address" v-model="businessAddress" icon="hi-location-marker" />
             <InputDiv name="phoneNumber" label="Phone Number" v-model="phoneNumber" icon="bi-telephone" />
