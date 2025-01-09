@@ -4,12 +4,12 @@
         <p class="text-[1.5rem] pb-2">Welcome</p>
         <p>Don’t have an account? <span class="text-green">Sign up</span></p>
         <div class="bg-white relative rounded-md px-8 mt-[30px] py-6 max-w-[600px] form_div pt-[40px] w-full">
-            <InputDiv name="email" v-model="email" label="Email" icon="md-alternateemail-sharp"/>
+            <InputDiv name="email" v-model="email" label="Email" icon="md-alternateemail-sharp" :errorMsg="emailErrorMsg"/>
             <br />
-            <InputDiv name="password" v-model="password" label="Password" icon="bi-eye" />
+            <InputDiv name="password" v-model="password" label="Password" icon="bi-eye" :errorMsg="passwordErrorMsg"/>
             <div class="flex justify-between items-center py-4">
                 <p class="text-green text-[13px] cursor-pointer">Forgot Password</p>
-                <ButtonDiv name="Sign In"/>
+                <ButtonDiv name="Sign In" @click="handleSubmit"/>
             </div>
         </div>
      </div>
@@ -25,9 +25,31 @@ export default {
     data(){
         return{
             email:'',
-            password:''
+            password:'',
+            emailErrorMsg:'',
+            passwordErrorMsg:''
         }
     },
+    methods:{
+        handleSubmit(){
+            try{
+                if(this.email  === '' || this.password === ''){
+                    if(this.email === ''){
+                        this.emailErrorMsg = 'Required'
+                    }
+                    if(this.password === ''){
+                        this.passwordErrorMsg = 'Required'
+                    }
+                }else{
+                    localStorage.setItem('isLoggedIn','true');
+                    this.$router.push({ path: '/dashboard' })
+
+                }
+            }catch(e){
+                console.log(e)
+            }
+        }
+    }
 }
 </script>
 

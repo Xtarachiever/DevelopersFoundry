@@ -4,7 +4,9 @@
             <p class="text-[1.5rem] font-semibold">Great to have you onboard</p>
             <p class="py-4 pb-8 text-[15px] leading-[26px]">We just mailed you a confirmation link to josh.bakery@gmail.com.
                 Complete registration by following the link.</p>
-            <ButtonDiv name="Dashboard" iconName="md-arrowrightalt-round" />
+            <RouterLink to="/auth/signin">
+                <ButtonDiv name="Dashboard" iconName="md-arrowrightalt-round" />
+            </RouterLink>
         </div>
     </div>
 </template>

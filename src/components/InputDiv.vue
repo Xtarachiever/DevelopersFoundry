@@ -8,12 +8,15 @@
         <div class="absolute right-0">
             <v-icon :name="icon" class="text-black"></v-icon>
         </div>
+        <div v-if="errorMsg">
+            <span class="text-red-500">{{ errorMsg }}</span>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ["modelValue", "name", "type", "label","icon"],
+    props: ["modelValue", "name", "type", "label","icon","errorMsg"],
     data() {
         return {
             inputFocus: false

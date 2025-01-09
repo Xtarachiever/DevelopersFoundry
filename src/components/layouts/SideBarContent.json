@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Dashboard",
+        "iconName":"md-dashboard-round",
+        "route":"/dashboard"
+    },
+    {
+        "name":"Users",
+        "iconName":"pr-users",
+        "route":"/users"
+    },
+    {
+        "name":"Card",
+        "iconName":"bi-wallet-fill",
+        "route":"/wallet"
+    }
+]
