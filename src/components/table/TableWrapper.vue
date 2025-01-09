@@ -1,8 +1,12 @@
 <template>
-    <div>
+    <div class="table_div">
         <table class="text-cyan_blue w-full table">
             <thead>
                 <tr>
+                    <td v-if="checkers">
+                        <v-icon v-if="checked" name="md-checkbox-round"></v-icon>
+                        <v-icon  name="md-checkboxoutlineblank"></v-icon>
+                    </td>
                     <th v-for="(key, i) in Object.keys(data[0] || {})" :key="i" class="uppercase text-sm font-normal">
                         <slot name="headers" :entity="key" >
                             {{ key === 'S/N' ? '#' : key }}
@@ -12,8 +16,15 @@
             </thead>
             <tbody class="text-faint_cyan_blue">
                 <tr v-for="(key,i) in data" :key="i" class="table-rows">
+                    <td v-if="checkers">
+                        <v-icon v-if="checked" name="md-checkbox-round"></v-icon>
+                        <v-icon  name="md-checkboxoutlineblank"></v-icon>
+                    </td>
                     <td v-for="(value, colIndex) in Object.values(key)" :key="colIndex">
                         {{ value }}
+                    </td>
+                    <td v-if="checkers" class="cursor-pointer hover:text-green">
+                        <v-icon name="ri-delete-bin-line" @click="handleDelete"></v-icon>
                     </td>
                 </tr>
             </tbody>
@@ -23,7 +34,14 @@
 
 <script>
 export default {
-    props: ["data"]
+    props: ["data","checkers", "handleDelete"],
+    data(){
+        return{
+            checked: false,
+        }
+    },
+    components:{
+    }
 }
 </script>
 
@@ -57,42 +75,19 @@ tbody tr{
   padding-bottom: 30px;
   padding-top: 10px;
 }
-/* tr td:hover {
-  background-color: #d1e7dd;
-  cursor: pointer;
-} */
 
-/* Responsive table */
-@media screen and (max-width: 768px) {
-  table {
-    border: 0;
-  }
-  
-  thead {
-    display: none; /* Hide the headers for small screens */
-  }
-
-  tr {
-    display: block;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  td {
-    display: block;
-    text-align: right;
-    font-size: 14px;
-    border-bottom: 1px dotted #ccc;
-    position: relative;
-    padding-left: 50%;
-  }
-
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 15px;
-    font-weight: bold;
-    text-transform: capitalize;
-  }
+@media screen and (max-width: 930px){
+    .table_div{
+        /* min-width: 930px; */
+        overflow-x: auto;
+        width: 100%;
+        position: relative;
+    }
+    .table{
+        min-width: 930px;
+        overflow: scroll;
+        position: relative;
+        width: 100%;
+    }
 }
 </style>

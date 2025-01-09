@@ -22,7 +22,11 @@ import {
   BiArrowLeftCircleFill,
   FaChevronCircleRight,
   FaChevronCircleLeft,
-  MdCancelSharp
+  MdCancelSharp,
+  MdCheckboxoutlineblank,
+  MdCheckboxRound,
+  RiDeleteBinLine,
+  MdPowersettingsnewTwotone
 } from "oh-vue-icons/icons";
 
 const app = createApp(App);
@@ -44,7 +48,11 @@ addIcons(
   BiArrowLeftCircleFill,
   FaChevronCircleRight,
   FaChevronCircleLeft,
-  MdCancelSharp
+  MdCancelSharp,
+  MdCheckboxoutlineblank,
+  MdCheckboxRound,
+  RiDeleteBinLine,
+  MdPowersettingsnewTwotone
 );
 
 app.use(router);

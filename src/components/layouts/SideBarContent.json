@@ -13,5 +13,10 @@
         "name":"Card",
         "iconName":"bi-wallet-fill",
         "route":"/wallet"
+    },
+    {
+        "name":"Log Out",
+        "iconName":"md-powersettingsnew-twotone",
+        "route":"/auth/signin"
     }
 ]

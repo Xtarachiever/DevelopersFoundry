@@ -2,7 +2,11 @@
    <AuthLayout>
      <div class="text-cyan_blue">
         <p class="text-[1.5rem] pb-2">Welcome</p>
-        <p>Don’t have an account? <span class="text-green">Sign up</span></p>
+        <p>Don’t have an account? 
+            <RouterLink to="/auth/signup">
+                <span class="text-green cursor-pointer">Sign up</span>
+            </RouterLink>
+        </p>
         <div class="bg-white relative rounded-md px-8 mt-[30px] py-6 max-w-[600px] form_div pt-[40px] w-full">
             <InputDiv name="email" v-model="email" label="Email" icon="md-alternateemail-sharp" :errorMsg="emailErrorMsg"/>
             <br />

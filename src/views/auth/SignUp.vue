@@ -2,7 +2,11 @@
     <AuthLayout>
         <div v-if="name !== 'form3'">
             <p class="text-[1.5rem] font-semibold py-3">Create your free account</p>
-            <p><span class="">Already registered?</span><span class="text-green"> Sign in</span></p>
+            <p><span class="">Already registered?</span>
+                <RouterLink to="/auth/signin">
+                    <span class="text-green"> Sign in</span>
+                </RouterLink>
+            </p>
         </div>
         <Transition name="slide-fade">
             <RegistrationForm v-if="name === 'form1'" :handleFormChanges="handleFormChanges" />
