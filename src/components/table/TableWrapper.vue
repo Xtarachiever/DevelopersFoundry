@@ -1,7 +1,7 @@
 <template>
     <div class="table_div">
         <table class="text-cyan_blue w-full table">
-            <thead>
+            <thead v-if="!noHeader">
                 <tr>
                     <td v-if="checkers">
                         <v-icon v-if="checked" name="md-checkbox-round"></v-icon>
@@ -24,7 +24,7 @@
                         {{ value }}
                     </td>
                     <td v-if="checkers" class="cursor-pointer hover:text-green">
-                        <v-icon name="ri-delete-bin-line" @click="handleDelete"></v-icon>
+                        <v-icon name="ri-delete-bin-line" @click="handleDelete('delete')"></v-icon>
                     </td>
                 </tr>
             </tbody>
@@ -34,7 +34,7 @@
 
 <script>
 export default {
-    props: ["data","checkers", "handleDelete"],
+    props: ["data","checkers", "handleDelete", "noHeader"],
     data(){
         return{
             checked: false,

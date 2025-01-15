@@ -20,8 +20,8 @@
             <TableWrapper :data="tableContent" />
           </div>
         </div>
-        <div class="bg-white px-4 box-shadow max-w-[300px] w-full h-[100vh] shadow-md fixed top-[80px] right-0">
-          Calculator
+        <div class="bg-white box-shadow max-w-[300px] overflow-scroll w-full h-[100vh] shadow-md fixed top-[80px] right-0">
+          <CalculatorDiv />
         </div>
       </div>
       <ModalOverlay name="Store wallet" :open="modalStatus">
@@ -40,12 +40,14 @@ import BannerDiv from '@/components/BannerDiv.vue';
 import TableWrapper from '@/components/table/TableWrapper.vue';
 import tableContent from '@/components//table/TableContent1.json'
 import ModalOverlay from '@/components/modals/ModalOverlay.vue';
+import CalculatorDiv from '@/components/CalculatorDiv.vue';
 export default {
   components: {
     DashboardLayout,
     BannerDiv,
     TableWrapper,
-    ModalOverlay
+    ModalOverlay,
+    CalculatorDiv
   },
   data() {
     return {

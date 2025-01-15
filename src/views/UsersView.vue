@@ -9,7 +9,7 @@
                 <BannerDiv name="Josh Bakery Ventures" details="62, Bode Thomas, Surulere, Lagos"/>
             </div>
             <div>
-                <TableWrapper :data="userContent" :checkers="checkers" :handleDelete="handleModalToggle('delete')"/>
+                <TableWrapper :data="userContent" :checkers="checkers" :handleDelete="handleModalToggle"/>
             </div>
             <div>
                 <ModalOverlay name="Add New" :open="modalStatus">

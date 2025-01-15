@@ -1,0 +1,38 @@
+[
+    {
+        "S/N": 1,
+        "type":"Wallet top up",
+        "date":"06 Aug, 2019" , 
+        "amount":"NGN2000.00"
+    },
+    {
+        "S/N": 2,
+        "type":"Wallet top up",
+        "date":"06 Aug, 2019" , 
+        "amount":"NGN2000.00"
+    },
+    {
+        "S/N": 3,
+        "type":"Wallet top up",
+        "date":"06 Aug, 2019" , 
+        "amount":"NGN2000.00"
+    },
+    {
+        "S/N": 4,
+        "type":"Wallet top up",
+        "date":"06 Aug, 2019" , 
+        "amount":"NGN2000.00"
+    },
+    {
+        "S/N": 5,
+        "type":"Wallet top up",
+        "date":"06 Aug, 2019" , 
+        "amount":"NGN2000.00"
+    },
+    {
+        "S/N": 6,
+        "type":"Wallet top up",
+        "date":"06 Aug, 2019" , 
+        "amount":"NGN2000.00"
+    }
+]

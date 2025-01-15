@@ -26,7 +26,13 @@ import {
   MdCheckboxoutlineblank,
   MdCheckboxRound,
   RiDeleteBinLine,
-  MdPowersettingsnewTwotone
+  MdPowersettingsnewTwotone,
+  MdKeyboardarrowleftSharp,
+  MdKeyboardarrowrightRound,
+  CoDelete,
+  CoClock,
+  IoSettingsSharp,
+  MdLogoutOutlined
 } from "oh-vue-icons/icons";
 
 const app = createApp(App);
@@ -52,7 +58,13 @@ addIcons(
   MdCheckboxoutlineblank,
   MdCheckboxRound,
   RiDeleteBinLine,
-  MdPowersettingsnewTwotone
+  MdPowersettingsnewTwotone,
+  MdKeyboardarrowleftSharp,
+  MdKeyboardarrowrightRound,
+  CoDelete,
+  CoClock,
+  IoSettingsSharp,
+  MdLogoutOutlined
 );
 
 app.use(router);

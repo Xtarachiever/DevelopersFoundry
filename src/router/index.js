@@ -41,6 +41,11 @@ const router = createRouter({
       component: () => import('../views/auth/ForgotPassword.vue'),
     },
     {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('../views/SettingsView.vue'),
+    },
+    {
       path: "/:catchAll(.*)",
       name: "NotFound",
       component: () => import('../views/404Page.vue')
