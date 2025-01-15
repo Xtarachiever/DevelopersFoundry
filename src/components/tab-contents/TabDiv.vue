@@ -2,7 +2,7 @@
     <div class="py-4 px-8">
         <div class="flex items-center justify-between w-full px-4 gap-[20px] border-b border-gray cursor-pointer">
             <div v-for="content in tabContent" :key="content" :content="content" class="pb-2"
-                :class="activeContent === content.title.toLowerCase() ? 'text-cyan_blue relative font-semibold' : 'font-normal'"
+                :class="activeContent === content.title.toLowerCase() ? 'text-cyan_blue relative font-semibold' : 'font-normal text-faint_cyan_blue'"
                 @click="handleTabChanges(content.title)">{{content.title }}
                 <div 
                     :class="activeContent === content.title.toLowerCase() 

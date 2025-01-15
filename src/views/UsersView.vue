@@ -11,6 +11,7 @@
             <div>
                 <TableWrapper :data="userContent" :checkers="checkers" :handleDelete="handleModalToggle"/>
             </div>
+            <PracticeTable />
             <div>
                 <ModalOverlay name="Add New" :open="modalStatus">
                  <p>Add New</p>
@@ -30,13 +31,15 @@ import BannerDiv from '@/components/BannerDiv.vue';
 import TableWrapper from '@/components/table/TableWrapper.vue';
 import userContent from '@/components/table/UserContent.json';
 import ModalOverlay from '@/components/modals/ModalOverlay.vue';
+import PracticeTable from '@/components/table/PracticeTable.vue';
 export default {
     components:{
         DashboardLayout,
         ButtonDiv,
         BannerDiv,
         TableWrapper,
-        ModalOverlay
+        ModalOverlay,
+        PracticeTable
     },
     data(){
         return{

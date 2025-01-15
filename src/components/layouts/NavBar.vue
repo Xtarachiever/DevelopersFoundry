@@ -14,7 +14,9 @@
                 <RouterLink to="/settings">
                     <p class="cursor-pointer hover:text-green"><v-icon name="io-settings-sharp" class="mr-2"></v-icon><span>Settings</span></p>
                 </RouterLink>
-                <p class="cursor-pointer hover:text-green"><v-icon name="md-logout-outlined" class="mr-2"></v-icon><span>Log out</span></p>
+                <RouterLink to="/auth/signin">
+                <p class="cursor-pointer hover:text-green" @click="handleLogout"><v-icon name="md-logout-outlined" class="mr-2"></v-icon><span>Log out</span></p>
+                </RouterLink>
             </div>
         </div>
     </div>
@@ -30,6 +32,9 @@ export default {
     methods:{
         handleNavToggle(){
             this.navOpen = !this.navOpen
+        },
+        handleLogout(){
+            localStorage.setItem('isLoggedIn','false');
         }
     }
 }

@@ -26,6 +26,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('../views/SettingsView.vue'),
+      meta:{
+        needsAuth: true
+      }
+    },
+    {
       path: '/auth/signup',
       name: 'signup',
       component: () => import('../views/auth/SignUp.vue'),
@@ -39,11 +47,6 @@ const router = createRouter({
       path: '/auth/forgot-password',
       name: 'forgotPassword',
       component: () => import('../views/auth/ForgotPassword.vue'),
-    },
-    {
-      path: '/settings',
-      name: 'settings',
-      component: () => import('../views/SettingsView.vue'),
     },
     {
       path: "/:catchAll(.*)",
