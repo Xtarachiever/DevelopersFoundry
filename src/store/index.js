@@ -9,23 +9,19 @@ const headers= {
 
 export default createStore({
     state:{
-        singleAnime: localStorage.getItem("singleAnime") 
-        ? JSON.parse(localStorage.getItem("singleAnime")) 
-        : [],
-      allAnimes: localStorage.getItem("allAnimes") 
-        ? JSON.parse(localStorage.getItem("allAnimes")) 
-        : [],
+        singleAnime: [],
+      allAnimes: [],
         id:'1',
         loading:false
     },
     mutations:{
         setAnimesArray(state, payload){
             state.allAnimes = payload
-            localStorage.setItem("allAnimes", JSON.stringify(payload));
+            // localStorage.setItem("allAnimes", JSON.stringify(payload));
         },
         setSingleAnime(state, payload){
             state.singleAnime = payload
-            localStorage.setItem("singleAnime", JSON.stringify(payload));
+            // localStorage.setItem("singleAnime", JSON.stringify(payload));
         },
         setAnimeId(state, id){
             state.id = id

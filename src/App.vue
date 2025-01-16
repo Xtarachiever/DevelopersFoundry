@@ -1,16 +1,18 @@
 <template>
   <div>
-    <RouterView />
+    <KeepAlive>
+      <RouterView />
+    </KeepAlive>
   </div>
 </template>
 
 <script>
-import HomeView from './views/HomeView.vue';
+// import HomeView from './views/HomeView.vue';
 export default {
   name: 'App',
-  components: {
-    HomeView
-  },
+  // components: {
+  //   HomeView
+  // },
 }
 </script>
 
