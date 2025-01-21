@@ -2,10 +2,16 @@
     <div class="bg-white shadow-lg p-4 sticky top-0 w-full z-[2] relative">
         <div class="flex items-center justify-between text-cyan_blue">
             <img src="/logo.jpg" alt="Logo"/>
-            <div class="flex items-center gap-[6px] cursor-pointer" @click="handleNavToggle">
-                <v-icon name="fa-user-circle"></v-icon>
-                <p>Hi! User</p>
-                <v-icon name="md-keyboardarrowdown-round"></v-icon>
+            <div class="flex items-center gap-[20px]">
+                <div class="relative" v-show="getCartItems.length > 0">
+                    <span class="bg-red-500 text-white absolute h-[15px] w-[15px] -top-[0px] -right-[4px] rounded-full flex items-center justify-center text-xs">{{ getCartItems.length }}</span>
+                    <v-icon name="gi-shopping-cart" scale="2"></v-icon>
+                </div>
+                <div class="flex items-center gap-[6px] cursor-pointer" @click="handleNavToggle">
+                    <v-icon name="fa-user-circle"></v-icon>
+                    <p>Hi! User</p>
+                    <v-icon name="md-keyboardarrowdown-round"></v-icon>
+                </div>
             </div>
         </div>
         <div class="bg-white w-[200px] px-4 py-4 absolute top-[60px] right-[10px] modal_div" v-if="navOpen">
@@ -23,6 +29,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
     data(){
         return{
@@ -36,6 +43,9 @@ export default {
         handleLogout(){
             localStorage.setItem('isLoggedIn','false');
         }
+    },
+    computed:{
+        ...mapGetters('productsStore',['getCartItems'])
     }
 }
 </script>
