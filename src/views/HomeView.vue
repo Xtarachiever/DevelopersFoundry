@@ -79,14 +79,14 @@ export default {
     //   const input = 
     // },
     async fetchHighRatedAnime() {
-      // this.$store.commit("setAnimeId", '1');
-      await this.$store.dispatch("setSingleAnime", '1');
+      await this.$store.commit("setAnimeId", '1');
+      await this.$store.dispatch("setSingleAnime");
     },
     async fetchAllAnime(){
       const payload = {
         page: this.pageNo
       };
-      await this.$store.dispatch("setAnimesArray", payload)
+      // await this.$store.dispatch("setAnimesArray", payload)
     }
   }
 }

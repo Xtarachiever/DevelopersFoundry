@@ -32,11 +32,11 @@ export default createStore({
     },
     actions:{
         // Asynchronous actions
-        async setAnimesArray(state,{page, search,genres}){
+        async setAnimesArray(state,data){
             state.commit("setLoading", true)
             try{
-                let pageNo = page || '1'
-                await fetch(`${url}?page=${pageNo}&size=20${search ? `&search=${search}` : ''}${genres ? `&genres=${genres}` : ''}&sortOrder=asc
+                let pageNo = data?.page || '1'
+                await fetch(`${url}?page=${pageNo}&size=20${data?.search ? `&search=${data?.search}` : ''}${data?.genres ? `&genres=${data?.genres}` : ''}&sortOrder=asc
                 `,{
                     headers
                 })
@@ -49,13 +49,20 @@ export default createStore({
             }
         },
         async setSingleAnime(state,id){
-            let animeId = this.state.id || id
-            await fetch(`${url}/by-id/${animeId}
-            `,{
-                headers
-            })
-            .then((data)=>data.json())
-            .then((res)=>state.commit("setSingleAnime",res))
+            try{
+                state.commit("setLoading", true)
+                let animeId = this.state.id || id
+                await fetch(`${url}/by-id/${animeId}
+                `,{
+                    headers
+                })
+                .then((data)=>data.json())
+                .then((res)=>state.commit("setSingleAnime",res))
+            }catch(e){
+                console.log(e)
+            }finally{
+                state.commit("setLoading", false)
+            }
         }
     },
     modules:{},

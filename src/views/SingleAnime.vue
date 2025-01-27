@@ -1,7 +1,7 @@
 <template>
-    <div v-if="!getAnime" class="text-white">No Data Available</div>
-    <MainView v-else>
-        <div class="h-[100vh] w-full relative pb-6 px-6">
+    <MainView>
+        <div v-if="isLoading" class="loader"></div>
+        <div class="h-[100vh] w-full relative pb-6 px-6" v-else-if="!isLoading && getAnime">
             <img :src="getAnime.image" :alt="getAnime.title"
                 class="w-full absolute top-0 right-0 h-full object-cover opacity-50" />
             <div class="relative text-white text-left flex flex-col justify-end h-full">
@@ -35,6 +35,7 @@
                 </div>
             </div>
         </div>
+        <div v-else class="text-white">No Data Available</div>
     </MainView>
 </template>
 
@@ -50,7 +51,7 @@ export default {
     },
     methods: {
         async fetchSingleAnime() {
-            this.$store.commit("setAnimeId", this.id);
+            await this.$store.commit("setAnimeId", this.id);
             await this.$store.dispatch("setSingleAnime", this.id);
         },
         navigateToPreview() {
@@ -60,6 +61,9 @@ export default {
     computed: {
         getAnime() {
             return this.$store.getters.getSingleAnime
+        },
+        isLoading(){
+            return this.$store.getters.isLoading
         }
     }
 }
