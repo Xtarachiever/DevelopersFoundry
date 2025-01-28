@@ -20,13 +20,16 @@
  import AuthLayout from '@/components/layouts/AuthLayout.vue'
  import InputDiv from '@/components/InputDiv.vue'
  import ButtonDiv from '@/components/ButtonDiv.vue'
+import { ref } from 'vue'
  export default {
      components: { AuthLayout, InputDiv, ButtonDiv },
-     data(){
-         return{
-             email:''
-         }
-     },
+     setup(){
+        const email = ref('')
+
+        return {
+            email
+        }
+     }
  }
  </script>
  

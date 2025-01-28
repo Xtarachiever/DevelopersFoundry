@@ -25,6 +25,7 @@ import AuthLayout from '../../components/layouts/AuthLayout.vue'
 import RegistrationForm2 from '../../components/RegistrationForm2.vue'
 import RegistrationForm from '../../components/RegistrationForm.vue'
 import SuccessForm from '../../components/SuccessForm.vue'
+import { ref } from 'vue'
 export default {
     components: {
         AuthLayout,
@@ -32,19 +33,28 @@ export default {
         RegistrationForm2,
         SuccessForm
     },
-    methods: {
-        handleFormChanges(formName) {
-            this.name = formName
-        },
-        // handleBackClick(){
-        //     this.name = formName
-        // }
-    },
-    data(){
+    setup(){
+        const name = ref('form1');
+        // methods
+        const handleFormChanges = (formName) =>{
+            name.value = formName
+        }
+
         return{
-            name: 'form1'
+            handleFormChanges
         }
     }
+
+    // methods: {
+    //     handleFormChanges(formName) {
+    //         this.name = formName
+    //     },
+    // },
+    // data(){
+    //     return{
+    //         name: 'form1'
+    //     }
+    // }
 }
 </script>
 
