@@ -8,10 +8,10 @@
         <div class="mr-[300px]" v-else-if="!isLoading && getAllProducts.length > 0">
           <div class="flex flex-col gap-[20px]">
             <BannerDiv name="Store wallet" amount="2500" buttonName="Top up wallet" moreStyling="max-w-[200px]"
-              :handleModalToggle="handleModalToggle" :user_banner="user_banner" />
+              :handleModalToggle="handleModalToggle" :user_banner="userBanner" />
             <BannerDiv name="Total Disbursed" amount="12000" buttonName="View History"
               variant="bg-transparent text-cyan_blue border border-cyan_blue max-w-[200px]"
-              :handleModalToggle="handleModalToggle" :user_banner="user_banner" />
+              :handleModalToggle="handleModalToggle" :user_banner="userBanner" />
           </div>
           <div>
             <div class="flex justify-between text-cyan_blue pt-8">
@@ -77,50 +77,57 @@
 import DashboardLayout from '@/components/layouts/DashboardLayout.vue'
 import BannerDiv from '@/components/BannerDiv.vue';
 import TableWrapper from '@/components/table/TableWrapper.vue';
-import tableContent from '@/components//table/TableContent1.json'
+import tableContents from '@/components//table/TableContent1.json'
 import ModalOverlay from '@/components/modals/ModalOverlay.vue';
 import CalculatorDiv from '@/components/CalculatorDiv.vue';
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState, useStore } from 'vuex';
+import { ref, reactive,computed, onMounted } from 'vue';
+
+
 export default {
-  components: {
-    DashboardLayout,
-    BannerDiv,
-    TableWrapper,
-    ModalOverlay,
-    CalculatorDiv
-  },
-  data() {
-    return {
-      tableContent,
-      modalStatus: {},
-      user_banner: true,
-      selected: 0,
-      showRange: 5,
-      viewType: localStorage.getItem('viewType') || 'list',
-      itemsOffSet: 0,
-    }
-  },
-  mounted() {
-    this.$store.dispatch('productsStore/getAllProducts')
-  },
-  methods: {
-    handleModalToggle(name) {
-      this.modalStatus[name] = true
+  name: 'Dashboard Page',
+  components:{
+      DashboardLayout,
+      BannerDiv,
+      TableWrapper,
+      ModalOverlay,
+      CalculatorDiv
     },
-    handleShowRangeUpdate(event) {
-      this.showRange = parseInt(event.target.value, 10);
-      this.itemsOffSet = 0;
-    },
-    handleViewChoice(selectedViewType) {
-      this.viewType = selectedViewType
-      localStorage.setItem('viewType', this.viewType)
-    },
+  setup(){
+    const tableContent = ref(tableContents);
+    const modalStatus = reactive({});
+    const userBanner = ref(true);
+    const selected = ref(0);
+    const showRange = ref(5);
+    const itemsOffset = ref(0);
+    const viewType = ref(localStorage.getItem('viewType') || 'list');
 
-    handlePagination(direction) {
-      const totalProducts = this.getAllProducts.length;
-      const maxOffset = Math.ceil(totalProducts / this.showRange) - 1;
+    const store = useStore();
 
-      let nextPage = this.itemsOffSet / this.showRange + direction;
+    onMounted(()=>{
+      store.dispatch('productsStore/getAllProducts')
+    })
+
+    // Methods
+    const handleModalToggle = (name) => {
+      modalStatus[name] = true;
+    };
+
+    const handleShowRangeUpdate = (event) => {
+      showRange.value = parseInt(event.target.value, 10);
+      itemsOffset.value = 0;
+    };
+
+    const handleViewChoice = (selectedViewType) => {
+      viewType.value = selectedViewType;
+      localStorage.setItem('viewType', viewType.value);
+    };
+
+    const handlePagination = (direction) => {
+      const totalProducts = store.getters['productsStore/getAllProducts'].length;
+      const maxOffset = Math.ceil(totalProducts / showRange.value) - 1;
+
+      let nextPage = itemsOffset.value / showRange.value + direction;
 
       if (nextPage < 0) {
         nextPage = 0;
@@ -128,26 +135,112 @@ export default {
         return;
       }
 
-      this.itemsOffSet = nextPage * this.showRange;
+      itemsOffset.value = nextPage * showRange.value;
+    };
 
+    // Computed
+    const getAllProducts = computed(() => store.getters['productsStore/getAllProducts']);
+    const isLoading = computed(() => store.getters['productsStore/isLoading']);
+    const products = computed(() => store.state.productsStore.products);
+
+    const endOffset = computed(() => itemsOffset.value + showRange.value);
+
+    const slicedProducts = computed(() => {
+      return getAllProducts.value.slice(itemsOffset.value, endOffset.value);
+    });
+
+    store.dispatch('productsStore/getAllProducts');
+
+    return{
+      tableContent,
+      modalStatus,
+      userBanner,
+      selected,
+      showRange,
+      itemsOffset,
+      viewType,
+      handleModalToggle, 
+      handleShowRangeUpdate,
+      handleViewChoice,
+      handlePagination,
+      getAllProducts,
+      isLoading,
+      products,
+      endOffset,
+      slicedProducts
     }
 
-
-
-  },
-  computed: {
-    ...mapGetters('productsStore', ['getAllProducts', 'isLoading']),
-    ...mapState('productsStore', ['products']),
-
-    endOffSet() {
-      return this.itemsOffSet + this.showRange;
-    },
-
-    slicedProducts() {
-      return this.getAllProducts.slice(this.itemsOffSet, this.endOffSet)
-    }
   }
+
 }
+
+// export default {
+//   components: {
+//     DashboardLayout,
+//     BannerDiv,
+//     TableWrapper,
+//     ModalOverlay,
+//     CalculatorDiv
+//   },
+//   data() {
+//     return {
+//       tableContent,
+//       modalStatus: {},
+//       user_banner: true,
+//       selected: 0,
+//       showRange: 5,
+//       viewType: localStorage.getItem('viewType') || 'list',
+//       itemsOffSet: 0,
+//     }
+//   },
+//   // mounted() {
+//   //   store.dispatch('productsStore/getAllProducts')
+//   // },
+//   methods: {
+//     handleModalToggle(name) {
+//       this.modalStatus[name] = true
+//     },
+//     handleShowRangeUpdate(event) {
+//       this.showRange = parseInt(event.target.value, 10);
+//       this.itemsOffSet = 0;
+//     },
+//     handleViewChoice(selectedViewType) {
+//       this.viewType = selectedViewType
+//       localStorage.setItem('viewType', this.viewType)
+//     },
+
+//     handlePagination(direction) {
+//       const totalProducts = this.getAllProducts.length;
+//       const maxOffset = Math.ceil(totalProducts / this.showRange) - 1;
+
+//       let nextPage = this.itemsOffSet / this.showRange + direction;
+
+//       if (nextPage < 0) {
+//         nextPage = 0;
+//       } else if (nextPage > maxOffset) {
+//         return;
+//       }
+
+//       this.itemsOffSet = nextPage * this.showRange;
+
+//     }
+
+
+
+//   },
+//   computed: {
+//     ...mapGetters('productsStore', ['getAllProducts', 'isLoading']),
+//     ...mapState('productsStore', ['products']),
+
+//     endOffSet() {
+//       return this.itemsOffSet + this.showRange;
+//     },
+
+//     slicedProducts() {
+//       return this.getAllProducts.slice(this.itemsOffSet, this.endOffSet)
+//     }
+//   }
+// }
 </script>
 
 <style>
