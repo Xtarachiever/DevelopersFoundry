@@ -39,27 +39,37 @@
 
 <script>
 import DashboardLayout from '@/components/layouts/DashboardLayout.vue'
-import { mapActions, mapGetters } from 'vuex'
+import { useStore } from 'vuex'
+import { computed } from 'vue'
 export default {
     components:{
         DashboardLayout
     },
-    computed:{
-        ...mapGetters('productsStore', ['getCartItems']),
-        handleTotalPrices(){
-            const total = this.getCartItems.reduce((total, item)=> (item.price*item.quantity) + total,0)
+    setup(){
+        const store = useStore()
+        const getCartItems = computed(()=> store.getters['productsStore/getCartItems'])
+
+        const handleTotalPrices = computed(()=>{
+            const total = getCartItems.value.reduce((total, item)=> (item.price*item.quantity) + total,0)
             return total.toFixed(2);
-        }
-    },
-    methods:{
-        ...mapActions('productsStore',['removeFromCart']),
-        handleQuantityChange(cartItem, action){
+        })
+
+        // Methods
+        const removeFromCart = store.dispatch('productsStore/removeFromCart')
+
+        const handleQuantityChange=(cartItem, action)=>{
            if(cartItem.quantity === 1 && action === -1){
-            this.removeFromCart(cartItem.id)
+            removeFromCart(cartItem.id)
            }
            cartItem.quantity += action
-        },
-    }
+        }
+
+        return{
+            handleQuantityChange,
+            handleTotalPrices,
+            getCartItems
+        }
+    },
 }
 </script>
 

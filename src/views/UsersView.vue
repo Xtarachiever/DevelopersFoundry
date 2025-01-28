@@ -29,9 +29,10 @@ import DashboardLayout from '@/components/layouts/DashboardLayout.vue'
 import ButtonDiv from '@/components/ButtonDiv.vue';
 import BannerDiv from '@/components/BannerDiv.vue';
 import TableWrapper from '@/components/table/TableWrapper.vue';
-import userContent from '@/components/table/UserContent.json';
+import userContents from '@/components/table/UserContent.json';
 import ModalOverlay from '@/components/modals/ModalOverlay.vue';
 import PracticeTable from '@/components/table/PracticeTable.vue';
+import { reactive, ref } from 'vue';
 export default {
     components:{
         DashboardLayout,
@@ -41,18 +42,35 @@ export default {
         ModalOverlay,
         PracticeTable
     },
-    data(){
-        return{
-            userContent,
-            checkers: true,
-            modalStatus:{}
+    setup(){
+        const userContent = ref(userContents)
+        const checkers = ref(true);
+        const modalStatus = reactive({})
+
+        // Methods
+        const handleModalToggle = (name) => {
+            modalStatus[name] = true
         }
-    },
-    methods:{
-    handleModalToggle(name){
-      this.modalStatus[name] = true
+
+        return{
+            handleModalToggle,
+            userContent,
+            checkers,
+            modalStatus
+        }
     }
-  }
+//     data(){
+//         return{
+//             userContent,
+//             checkers: true,
+//             modalStatus:{}
+//         }
+//     },
+//     methods:{
+//     handleModalToggle(name){
+//       this.modalStatus[name] = true
+//     }
+//   }
 }
 </script>
 

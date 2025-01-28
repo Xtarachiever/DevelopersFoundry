@@ -35,31 +35,67 @@
 
 <script>
 import DashboardLayout from '@/components/layouts/DashboardLayout.vue';
-import { mapActions, mapGetters } from 'vuex';
+import { useStore } from 'vuex';
+import { onMounted, computed, watch } from 'vue';
 
 export default {
     props: ['id'],
     components: {
         DashboardLayout
     },
-    computed: {
-        ...mapGetters('productsStore', ['getSingleProduct', 'isLoading', 'getCartItems']),
-        fetchSingleProductInCart(){
-            console.log(this.getCartItems)
+    setup(props) {
+        const store = useStore();
+
+        // Computed
+        const getSingleProduct = computed(()=>store.getters['productsStore/getSingleProduct'])
+        const isLoading = computed(()=>store.getters['productsStore/isLoading'])
+        const getCartItems = computed(()=>store.getters['productsStore/getCartItems'])
+
+        const fetchSingleProductInCart = computed(() => {
+            console.log(getCartItems)
             // return this.getCartItems.find((cartItem) => cartItem.id === this.id)
+        })
+
+        onMounted(() => {
+            store.dispatch('productsStore/fetchSingleProduct',props.id)
+            fetchSingleProductDetails()
+        })
+        //    Methods
+        const fetchSingleProductDetails = async () => {
+            try {
+                await store.dispatch('productsStore/fetchSingleProduct', props.id);
+                console.log('Product fetched successfully!');
+            } catch (error) {
+                console.error('Error fetching product:', error);
+            }
+        };
+
+        return {
+            getSingleProduct,
+            isLoading,
+            getCartItems,
+            fetchSingleProductInCart,
+            fetchSingleProductDetails
         }
-    },
-    mounted() {
-        this.$store.dispatch('productsStore/fetchSingleProduct')
-        this.fetchSingleProductDetails()
-        console.log(this.getCartItems)
-    },
-    methods: {
-        ...mapActions('productsStore', ['fetchSingleProduct']),
-        fetchSingleProductDetails() {
-            this.fetchSingleProduct(this.id)
-        },
     }
+    // computed: {
+    //     ...mapGetters('productsStore', ['getSingleProduct', 'isLoading', 'getCartItems']),
+    //     fetchSingleProductInCart(){
+    //         console.log(this.getCartItems)
+    //         // return this.getCartItems.find((cartItem) => cartItem.id === this.id)
+    //     }
+    // },
+    // mounted() {
+    //     this.$store.dispatch('productsStore/fetchSingleProduct')
+    //     this.fetchSingleProductDetails()
+    //     console.log(this.getCartItems)
+    // },
+    // methods: {
+    //     ...mapActions('productsStore', ['fetchSingleProduct']),
+    //     fetchSingleProductDetails() {
+    //         this.fetchSingleProduct(this.id)
+    //     },
+    // }
 }
 </script>
 
