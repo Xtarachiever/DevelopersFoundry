@@ -55,11 +55,20 @@
                         <div>
                             <p class="font-bold text-[1.2rem] py-4">{{ truncateText(key.title,20) }}</p>
                             <p>{{ truncateText(key.description, 40) }}</p>
+                            <p>Price: {{ key.price }}</p>
+                            <div class="flex items-center gap-[10px]" v-if="handleCartProductsFiltering(key.id)">
+                                <v-icon name="bi-plus" scale="2" class="cursor-pointer" @click.stop="getCartItemQuantity(key.id,'increment')"></v-icon>
+                                <p >Qty: {{ getCartItemQuantity(key.id) }}</p>
+                                <v-icon name="hi-minus-sm" scale="2"  class="cursor-pointer" @click.stop="getCartItemQuantity(key.id,'decrement')"></v-icon>
+                            </div>
                         </div>
-                        <div class="pt-4">
+                        <div class="pt-4 mb-6">
                             <ButtonDiv name="Remove From Cart" moreStyling="max-w-none py-3 bg-red-500" @click.stop="handleRemoveFromCart(key.id)" v-if="handleCartProductsFiltering(key.id)"/>
                             <ButtonDiv name="Add To Cart" moreStyling="max-w-none py-3" @click.stop="handleAddToCart(key)" v-else/>
                         </div>
+                        <RouterLink :to="`/product/${key.id}`">
+                            <span class="bg-green text-white rounded-md p-3 w-full block text-center">View Product</span>
+                        </RouterLink>
                     </td>
                 </tr>
             </tbody>
@@ -107,7 +116,20 @@ export default {
         },
         handleCartProductsFiltering(id){
             return this.getCartItems.filter((eachItem)=>eachItem.id === id).length
-        }
+        },
+        getCartItemQuantity(id,actions) {
+            const item = this.getCartItems.find((eachItem) => eachItem.id === id);
+            if(item && actions === 'increment'){
+                return item.quantity++
+            }else if(item && actions === 'decrement'){
+                if(item.quantity <= 1){
+                    this.removeFromCart(id)
+                }else{
+                    item.quantity--
+                }
+            }
+            return item ? item.quantity : 0;
+        },
     },
     computed:{
         ...mapGetters('productsStore',['getCartItems']),

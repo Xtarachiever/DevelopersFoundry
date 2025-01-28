@@ -26,7 +26,8 @@
                       <option value="15">15</option>
                       <option value="20">20</option>
                     </select>
-                    <v-icon name="md-keyboardarrowdown-sharp" class="absolute right-[5px] top-[3px]"></v-icon>
+                    <v-icon name="md-keyboardarrowdown-sharp"
+                      class="absolute right-[5px] top-[3px] pointer-events-none"></v-icon>
                   </div>
                 </div>
                 <div class="flex items-center gap-[10px]">
@@ -41,10 +42,6 @@
             <div class="flex items-center gap-[20px] text-cyan_blue bg-white w-full p-4 mt-4">
               <span>SelectView Type:</span>
               <div class="relative w-[100px]">
-                <!-- <select v-model="viewType" @change="handleViewChoice">
-                  <option value="list">List</option>
-                  <option value="grid"><v-icon name="bi-grid-1x2-fill" scale="4"></v-icon></option>
-                </select> -->
                 <div class="flex gap-[14px]">
                   <v-icon name="bi-list-task" class="cursor-pointer w-[40px] h-[40px]"
                     :class="viewType === 'list' && 'border-2 border-green rounded-lg'" scale="1.4"
@@ -118,20 +115,24 @@ export default {
       this.viewType = selectedViewType
       localStorage.setItem('viewType', this.viewType)
     },
+
     handlePagination(direction) {
       const totalProducts = this.getAllProducts.length;
-      let nextPage = this.itemsOffSet + direction
-      const newOffSet = (nextPage * this.showRange) % totalProducts
-      this.itemsOffSet = newOffSet
+      const maxOffset = Math.ceil(totalProducts / this.showRange) - 1;
 
-      if (this.itemsOffSet < 0 && direction === -1) {
-        this.itemsOffSet = 0;
-      }
-      // console.log(newOffSet)
-      if (newOffSet >= totalProducts && direction === +1) {
+      let nextPage = this.itemsOffSet / this.showRange + direction;
+
+      if (nextPage < 0) {
+        nextPage = 0;
+      } else if (nextPage > maxOffset) {
         return;
       }
+
+      this.itemsOffSet = nextPage * this.showRange;
+
     }
+
+
 
   },
   computed: {
@@ -160,5 +161,4 @@ select {
   appearance: none;
   text-indent: 10px;
 }
-
 </style>

@@ -39,7 +39,9 @@ import {
   MdKeyboarddoublearrowrightOutlined,
   MdKeyboardarrowdownSharp,
   BiGrid1X2Fill,
-  BiListTask
+  BiListTask,
+  BiPlus,
+  HiMinusSm
 } from "oh-vue-icons/icons";
 import { createStore } from "vuex";
 
@@ -78,7 +80,9 @@ addIcons(
   MdKeyboarddoublearrowrightOutlined,
   MdKeyboardarrowdownSharp,
   BiGrid1X2Fill,
-  BiListTask
+  BiListTask,
+  BiPlus,
+  HiMinusSm
 );
 
 const store = createStore({

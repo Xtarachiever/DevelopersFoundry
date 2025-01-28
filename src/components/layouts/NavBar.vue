@@ -3,10 +3,12 @@
         <div class="flex items-center justify-between text-cyan_blue">
             <img src="/logo.jpg" alt="Logo"/>
             <div class="flex items-center gap-[20px]">
-                <div class="relative" v-show="getCartItems.length > 0">
-                    <span class="bg-red-500 text-white absolute h-[15px] w-[15px] -top-[0px] -right-[4px] rounded-full flex items-center justify-center text-xs">{{ getCartItems.length }}</span>
-                    <v-icon name="gi-shopping-cart" scale="2"></v-icon>
-                </div>
+                <RouterLink to="/cart">
+                    <div class="relative" v-show="getCartItems.length > 0">
+                        <span class="bg-red-500 text-white absolute h-[15px] w-[15px] -top-[0px] -right-[4px] rounded-full flex items-center justify-center text-xs">{{ getCartItems.length }}</span>
+                        <v-icon name="gi-shopping-cart" scale="2"></v-icon>
+                    </div>
+                </RouterLink>
                 <div class="flex items-center gap-[6px] cursor-pointer" @click="handleNavToggle">
                     <v-icon name="fa-user-circle"></v-icon>
                     <p>Hi! User</p>

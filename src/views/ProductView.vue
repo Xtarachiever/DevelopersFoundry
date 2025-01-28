@@ -22,6 +22,9 @@
                     <p>Rate: {{ getSingleProduct?.rating?.rate }} / 5.0</p>
                     <p>Counts: {{ getSingleProduct?.rating?.count }}</p>
                 </div>
+                <div>
+                    {{ fetchSingleProductInCart }}
+                </div>
             </div>
             <div v-else>
                 No product Found
@@ -40,17 +43,22 @@ export default {
         DashboardLayout
     },
     computed: {
-        ...mapGetters('productsStore', ['getSingleProduct', 'isLoading'])
+        ...mapGetters('productsStore', ['getSingleProduct', 'isLoading', 'getCartItems']),
+        fetchSingleProductInCart(){
+            console.log(this.getCartItems)
+            // return this.getCartItems.find((cartItem) => cartItem.id === this.id)
+        }
     },
     mounted() {
         this.$store.dispatch('productsStore/fetchSingleProduct')
         this.fetchSingleProductDetails()
+        console.log(this.getCartItems)
     },
     methods: {
         ...mapActions('productsStore', ['fetchSingleProduct']),
         fetchSingleProductDetails() {
             this.fetchSingleProduct(this.id)
-        }
+        },
     }
 }
 </script>
