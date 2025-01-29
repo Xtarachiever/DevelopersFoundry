@@ -31,11 +31,6 @@ export default {
             images
         }
     },
-    // data() {
-    //     return {
-    //         images: ['/slide_img1.jpg', '/slide_img2.jpg'],
-    //     }
-    // },
     props:['404'],
     components: {
         CarouselDiv,

@@ -28,22 +28,41 @@
 </template>
 
 <script>
-import practiceTable from './PracticeTable.json'
+import { reactive, ref } from 'vue'
+import practiceTables from './PracticeTable.json'
 export default {
-    data(){
+    setup(){
+        const practiceTable = practiceTables
+        const selected = ref(0)
+        const selectedStatus = reactive({})
+
+        const handleSelected = (id) =>{
+            selectedStatus[id] = !selectedStatus[id]
+            // console.log( Object.values(this.selectedStatus).filter((value)=>value === true))
+            selected = Object.values(selectedStatus).filter((value)=>value === true).length
+        }
+
         return{
             practiceTable,
-            selected: 0,
-            selectedStatus:{}
+            selected,
+            selectedStatus,
+            handleSelected
         }
     },
-    methods:{
-        handleSelected(id){
-            this.selectedStatus[id] = !this.selectedStatus[id]
-            // console.log( Object.values(this.selectedStatus).filter((value)=>value === true))
-            this.selected = Object.values(this.selectedStatus).filter((value)=>value === true).length
-        }
-    }
+    // data(){
+    //     return{
+    //         practiceTable,
+    //         selected: 0,
+    //         selectedStatus:{}
+    //     }
+    // },
+    // methods:{
+    //     handleSelected(id){
+    //         this.selectedStatus[id] = !this.selectedStatus[id]
+    //         // console.log( Object.values(this.selectedStatus).filter((value)=>value === true))
+    //         this.selected = Object.values(this.selectedStatus).filter((value)=>value === true).length
+    //     }
+    // }
 }
 </script>
 

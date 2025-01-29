@@ -55,11 +55,17 @@ export default {
         })
 
         // Methods
-        const removeFromCart = store.dispatch('productsStore/removeFromCart')
+        const handleRemoveFromCart = async (productId) =>{
+            try{
+                store.dispatch('productsStore/removeFromCart', productId)
+            }catch(err){
+                console.log(err)
+            }
+        }
 
         const handleQuantityChange=(cartItem, action)=>{
            if(cartItem.quantity === 1 && action === -1){
-            removeFromCart(cartItem.id)
+            handleRemoveFromCart(cartItem.id)
            }
            cartItem.quantity += action
         }

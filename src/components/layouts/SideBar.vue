@@ -7,21 +7,26 @@
 </template>
 
 <script>
-import sideBarContents from './SideBarContent.json'
+import { ref } from 'vue'
+import sideBarContent from './SideBarContent.json'
 import SideBarContentDiv from './SideBarContentDiv.vue'
 export default {
-    data() {
-        return {
-            sideBarContents,
-            active: 'Dashboard',
-        }
-    },
     components:{
         SideBarContentDiv
     },
-    methods: {
-        setActive(newName) {
-            this.active = newName
+    setup(){
+        const active = ref('Dashboard')
+        const sideBarContents = sideBarContent
+
+        // methods
+        const setActive = (newName) => {
+            active.value = newName
+        }
+
+        return{
+            active,
+            sideBarContents,
+            setActive
         }
     }
 }

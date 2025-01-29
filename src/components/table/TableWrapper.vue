@@ -16,7 +16,7 @@
             </thead>
             <!-- :class="viewType === 'grid' ? 'grid grid-cols-3 gap-[30px] w-full' : 'contents'" -->
             <tbody class="text-faint_cyan_blue" v-if="viewType === 'list'">
-                <tr v-for="(key,i) in data" :key="i" class="table-rows cursor-pointer ring-2 relative hover:transition-all" @click="this.handleSelectedItems(key.id)"
+                <tr v-for="(key,i) in data" :key="i" class="table-rows cursor-pointer ring-2 relative hover:transition-all" @click="handleSelectedItems(key.id)"
                 :class="[selectedStatus[key.id] === true ? 'ring-offset-2 ring-green' : ' ring-transparent',]"   @mouseover="handleHover(key.id)"
                     @mouseleave="handleMouseLeave(key.id)"
                 >
@@ -44,7 +44,7 @@
 
             <tbody v-else class="grid grid-cols-3 gap-[20px]">
                 <tr
-                v-for="(key,i) in data" :key="i" class="cursor-pointer ring-2 relative hover:scale-[1.02]" @click="this.handleSelectedItems(key.id)"
+                v-for="(key,i) in data" :key="i" class="cursor-pointer ring-2 relative hover:scale-[1.02]" @click="handleSelectedItems(key.id)"
                 :class="[selectedStatus[key.id] === true ? 'ring-offset-2 ring-green' : ' ring-transparent',]"   @mouseover="handleHover(key.id)"
                     @mouseleave="handleMouseLeave(key.id)"
                 >
@@ -77,62 +77,89 @@
 </template>
 
 <script>
+import { computed, reactive, ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import { mapGetters, mapActions } from 'vuex';
+import { useStore } from 'vuex';
 import ButtonDiv from '../ButtonDiv.vue';
 export default {
     props: ["data","checkers", "handleDelete", "noHeader","entity","viewType"],
-    data(){
-        return{
-            checked: false,
-            selected:0,
-            selectedStatus:{},
-            hovering: {},
-        }
-    },
     components:{
-    RouterLink,
-    ButtonDiv
-},
-    methods:{
-        handleSelectedItems(id){
-            this.selectedStatus[id] = !this.selectedStatus[id];
-            const selectedCount = Object.values(this.selectedStatus).filter((item)=>item === true).length
+        RouterLink,
+        ButtonDiv
+    },
+    setup(props, {emit}){
+        const store = useStore()
 
-            this.$emit('update:selected', selectedCount);
-        },
-        handleHover(id){
-            this.hovering[id] = true;
-        },
-        handleMouseLeave(id){
-            this.hovering[id] = false
-        },
-        ...mapActions('productsStore',['addToCart','removeFromCart']),
-        handleAddToCart(product){
-            this.addToCart(product)
-        },
-        handleRemoveFromCart(productId){
-            this.removeFromCart(productId)
-        },
-        handleCartProductsFiltering(id){
-            return this.getCartItems.filter((eachItem)=>eachItem.id === id).length
-        },
-        getCartItemQuantity(id,actions) {
-            const item = this.getCartItems.find((eachItem) => eachItem.id === id);
+        const checked = ref(false)
+        const selected = ref(0)
+        const selectedStatus = reactive({})
+        const hovering = reactive({})
+
+        // Methods
+        const handleSelectedItems = (id) => {
+            selectedStatus[id] = !selectedStatus[id];
+            const selectedCount = Object.values(selectedStatus).filter((item)=>item === true).length
+            emit('update:selected', selectedCount);
+        }
+
+        const handleHover = (id) =>{
+            hovering[id] = true;
+        }
+
+        const handleMouseLeave = (id) =>{
+            hovering[id] = false
+        }
+
+        const handleAddToCart = async (product) => {
+            try {
+                await store.dispatch('productsStore/addToCart', product)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+
+        const handleRemoveFromCart = async (productId) => {
+            try{
+                await store.dispatch('productsStore/removeFromCart', productId)
+            }catch(err){
+                console.log(err)
+            }
+        }
+        
+        const handleCartProductsFiltering = (id) =>{
+            return getCartItems.value.filter((eachItem)=>eachItem.id === id).length
+        }
+        
+        const getCartItemQuantity = (id,actions) =>{
+            const item = getCartItems.value.find((eachItem) => eachItem.id === id);
             if(item && actions === 'increment'){
                 return item.quantity++
             }else if(item && actions === 'decrement'){
                 if(item.quantity <= 1){
-                    this.removeFromCart(id)
+                    handleRemoveFromCart(id)
                 }else{
                     item.quantity--
                 }
             }
             return item ? item.quantity : 0;
-        },
-    },
-    computed:{
-        ...mapGetters('productsStore',['getCartItems']),
+        }
+
+        // computed
+        const getCartItems = computed(()=> store.getters['productsStore/getCartItems'])
+
+        return{
+            checked,
+            selected,
+            selectedStatus,
+            hovering,
+            handleSelectedItems,
+            getCartItemQuantity,
+            handleAddToCart,
+            handleRemoveFromCart,
+            handleMouseLeave,
+            handleHover,
+            handleCartProductsFiltering,            
+        }
     }
 }
 </script>

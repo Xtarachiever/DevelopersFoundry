@@ -31,24 +31,32 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { computed, ref } from 'vue';
+import { mapGetters, useStore } from 'vuex';
 export default {
-    data(){
-        return{
-            navOpen: false
+    setup(){
+        const navOpen = ref(false)
+        const store = useStore()
+
+        // Methods
+        const handleNavToggle = () => {
+            navOpen.value = !navOpen.value
         }
-    },
-    methods:{
-        handleNavToggle(){
-            this.navOpen = !this.navOpen
-        },
-        handleLogout(){
+
+        const handleLogout = () =>{
             localStorage.setItem('isLoggedIn','false');
         }
+
+        // computed
+        const getCartItems = computed(()=> store.getters['productsStore/getCartItems'])
+
+        return{
+            navOpen,
+            handleLogout,
+            handleNavToggle,
+            getCartItems
+        }
     },
-    computed:{
-        ...mapGetters('productsStore',['getCartItems'])
-    }
 }
 </script>
 

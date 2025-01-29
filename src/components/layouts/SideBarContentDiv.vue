@@ -10,9 +10,12 @@
 <script>
 export default {
     props:["content","active","setActive"],
-    methods:{
-        handleLogout(){
+    setup(){
+        const handleLogout = () =>{
             localStorage.setItem('isLoggedIn','false');
+        }
+        return{
+            handleLogout
         }
     }
 }
