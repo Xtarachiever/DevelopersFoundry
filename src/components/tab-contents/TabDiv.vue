@@ -16,23 +16,38 @@
 </template>
 
 <script>
-import tabContent from './TabContent.js'
+import { reactive, ref } from 'vue'
+import tabContents from './TabContent.js'
 import TabWrapper from './TabWrapper.vue'
 export default {
-    data() {
-        return {
-            tabContent,
-            activeContent: 'profile'
-        }
-    },
     components: {
         TabWrapper
     },
-    methods: {
-        handleTabChanges(name) {
-            this.activeContent = name.toLowerCase()
+    setup(){
+        const tabContent = tabContents
+        const activeContent = ref('profile')
+
+        const handleTabChanges = (name) =>{
+            activeContent.value = name.toLowerCase()
         }
-    }
+
+        return{
+            tabContent,
+            handleTabChanges,
+            activeContent
+        }
+    },
+    // data() {
+    //     return {
+    //         tabContent,
+    //         activeContent: 'profile'
+    //     }
+    // },
+    // methods: {
+    //     handleTabChanges(name) {
+    //         this.activeContent = name.toLowerCase()
+    //     }
+    // }
 }
 </script>
 

@@ -5,7 +5,7 @@
             @focus="inputFocus = true" @blur="!modelValue ? (inputFocus = false) : (inputFocus = true)" 
             @input="handleInput($event)"
             />
-        <div class="absolute right-0">
+        <div class="absolute right-0" v-if="icon">
             <v-icon :name="icon" class="text-black"></v-icon>
         </div>
         <div v-if="errorMsg">

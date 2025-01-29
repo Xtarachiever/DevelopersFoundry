@@ -13,16 +13,23 @@
 
 <script>
 import TableWrapper from '../table/TableWrapper.vue'
-import invoiceContent from '../table/InvoiceContent.json'
+import invoiceContents from '../table/InvoiceContent.json'
 export default {
-    data(){
+    components:{
+        TableWrapper
+    },
+    setup(){
+        const invoiceContent = invoiceContents
+
         return{
             invoiceContent
         }
     },
-    components:{
-        TableWrapper
-    }
+    // data(){
+    //     return{
+    //         invoiceContent
+    //     }
+    // },
 }
 </script>
 
