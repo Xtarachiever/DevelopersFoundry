@@ -16,14 +16,19 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 import ButtonDiv from './ButtonDiv.vue'
 import InputDiv from './InputDiv.vue';
 export default {
-    data() {
-        return {
-            businessName: '',
-            businessAddress: '',
-            phoneNumber: ''
+    setup(){
+        const businessAddress = ref('')
+        const businessName = ref('')
+        const phoneNumber = ref('')
+
+        return{
+            businessAddress,
+            businessName,
+            phoneNumber
         }
     },
     components: {

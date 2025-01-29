@@ -24,11 +24,18 @@ import RegistrationForm from '../RegistrationForm.vue';
 import RegistrationForm2 from '../RegistrationForm2.vue'
 import SuccessFormVue from '../SuccessForm.vue';
 export default {
-    data() {
-        return {
-            images: ['/slide_img1.jpg', '/slide_img2.jpg'],
+    setup(){
+        const  images = ['/slide_img1.jpg', '/slide_img2.jpg']
+
+        return{
+            images
         }
     },
+    // data() {
+    //     return {
+    //         images: ['/slide_img1.jpg', '/slide_img2.jpg'],
+    //     }
+    // },
     props:['404'],
     components: {
         CarouselDiv,

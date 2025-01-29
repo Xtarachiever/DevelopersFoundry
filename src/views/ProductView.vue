@@ -52,7 +52,7 @@ export default {
         const getCartItems = computed(()=>store.getters['productsStore/getCartItems'])
 
         const fetchSingleProductInCart = computed(() => {
-            console.log(getCartItems)
+            // console.log(getCartItems)
             // return this.getCartItems.find((cartItem) => cartItem.id === this.id)
         })
 

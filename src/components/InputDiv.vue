@@ -15,18 +15,31 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
     props: ["modelValue", "name", "type", "label","icon","errorMsg"],
-    data() {
-        return {
-            inputFocus: false
+    setup(props,{emit}){
+        const inputFocus = ref(false);
+
+        const handleInput = (event) =>{
+            emit('update:modelValue', event.target.value)
+        }
+
+        return{
+            inputFocus,
+            handleInput
         }
     },
-    methods: {
-        handleInput(event) {
-            this.$emit('update:modelValue', event.target.value)
-        }
-    }
+    // data() {
+    //     return {
+    //         inputFocus: false
+    //     }
+    // },
+    // methods: {
+    //     handleInput(event) {
+    //         this.$emit('update:modelValue', event.target.value)
+    //     }
+    // }
 }
 </script>
 

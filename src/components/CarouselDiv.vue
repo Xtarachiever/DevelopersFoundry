@@ -20,31 +20,38 @@
 </template>
 
 <script>
+import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 export default {
   props: ["images"],
-  data() {
-    return {
-      selected: '/slide_img1.jpg',
-      intervalId: null,
-      currentIndex: 0
-    }
-  },
-  mounted(){
-    this.slideCarousel();
-  },
-  methods: {
-    slideCarousel(){
-      this.intervalId = setInterval(()=>{
-        this.selected = this.images[this.currentIndex]
-        this.currentIndex = (this.currentIndex + 1) % this.images.length
+
+  setup(props){
+    const selected = ref(props.images[0])
+    const intervalId = ref(null)
+    const currentIndex = ref(0)
+
+    onMounted(()=>{
+      slideCarousel()
+    })
+
+    // Methods
+    const slideCarousel = () =>{
+      intervalId.value = setInterval(()=>{
+        selected.value = props.images[currentIndex.value]
+        currentIndex.value = (currentIndex.value + 1) % props.images.length
       },3000)
     }
-  },
-  beforeDestroy() {
-  if (this.intervalId) {
-    clearInterval(this.intervalId); // Clear the interval when the component is destroyed
+
+    onBeforeUnmount(()=>{
+      if (intervalId.value) {
+        clearInterval(intervalId.value);
+      }
+    })
+
+    return{
+      selected
+    }
   }
-},
+  
 }
 </script>
 

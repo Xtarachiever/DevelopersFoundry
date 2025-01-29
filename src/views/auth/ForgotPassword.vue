@@ -8,7 +8,9 @@
                 <InputDiv name="email" v-model="email" label="Email" icon="md-alternateemail-sharp"/>
             </div>
              <div class="flex justify-between items-center w-full">
-                 <p class="text-green text-[13px] cursor-pointer">Back to Login</p>
+                <RouterLink to="/auth/signin">
+                    <p class="text-green text-[13px] cursor-pointer">Back to Login</p>
+                </RouterLink>
                  <ButtonDiv name="Recover"/>
              </div>
          </div>

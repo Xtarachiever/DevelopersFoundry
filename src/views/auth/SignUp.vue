@@ -41,7 +41,8 @@ export default {
         }
 
         return{
-            handleFormChanges
+            handleFormChanges,
+            name
         }
     }
 

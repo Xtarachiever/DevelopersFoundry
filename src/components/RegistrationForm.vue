@@ -19,16 +19,22 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 import AuthFormWrapper from './AuthFormWrapper.vue';
 import ButtonDiv from './ButtonDiv.vue';
 import InputDiv from './InputDiv.vue';
 export default {
-    data(){
+    setup(){
+        const firstName = ref('')
+        const lastName = ref('')
+        const email = ref('')
+        const password = ref('');
+
         return{
-            firstName:'',
-            lastName:'',
-            email:'',
-            password:''
+            firstName,
+            lastName,
+            email,
+            password
         }
     },
     props:["handleFormChanges"],
