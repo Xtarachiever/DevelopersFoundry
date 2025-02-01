@@ -1,42 +1,11 @@
 <script>
 import NavBar from '../components/NavBar.vue'
 export default {
-  data() {
-    return {
-      product: null,
-      // id: this.$route.params.id,
-      isLoading: false,
-      url: 'https://fakestoreapi.com/products',
-      productsLength: 0,
-    }
-  },
   components: {
     NavBar,
   },
   props: ['id'],
   methods: {
-    async getSingleProduct() {
-      this.isLoading = true
-      try {
-        const res = await this.axios.get(`${this.url}/${this.id}`)
-        this.product = res.data
-      } catch (err) {
-        console.log(err?.message)
-      } finally {
-        this.isLoading = false
-      }
-    },
-    async getProductsLength() {
-      this.isLoading = true
-      try {
-        const res = await this.axios.get(`${this.url}`)
-        this.productsLength = res.data.length
-      } catch (err) {
-        console.log(err?.message)
-      } finally {
-        this.isLoading = false
-      }
-    },
     async getNextProduct() {
       const nextId = +this.id + 1
       if (nextId <= this.productsLength) {
@@ -51,13 +20,26 @@ export default {
       }
     },
   },
+  computed: {
+    product() {
+      const singleProduct = this.$store.getters.getProduct
+      return singleProduct
+    },
+    productsLength() {
+      const products = this.$store.getters.getAllProducts
+      return products.length
+    },
+    isLoading() {
+      return this.$store.getters.getLoadingState
+    },
+  },
   mounted() {
-    this.getSingleProduct()
-    this.getProductsLength()
+    this.$store.dispatch('getProduct', this.id)
+    this.$store.dispatch('getAllProducts')
   },
   watch: {
     id() {
-      this.getSingleProduct()
+      this.$store.dispatch('getProduct', this.id)
     },
   },
 }

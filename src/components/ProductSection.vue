@@ -24,30 +24,20 @@
 <script>
 import ProductCard from './ProductCard.vue'
 export default {
-  data() {
-    return {
-      products: [],
-      isLoading: false,
-    }
+  mounted() {
+    this.$store.dispatch('getAllProducts')
   },
   components: {
     ProductCard,
   },
-  methods: {
-    async fetchProducts(url) {
-      this.isLoading = true
-      try {
-        const res = await this.axios.get(`https://fakestoreapi.com/products/${url ? url : ''}`)
-        this.products = res.data
-      } catch (err) {
-        console.log(err?.message)
-      } finally {
-        this.isLoading = false
-      }
+  methods: {},
+  computed: {
+    products() {
+      return this.$store.getters.getAllProducts
     },
-  },
-  mounted() {
-    this.fetchProducts()
+    isLoading() {
+      return this.$store.getters.getLoadingState
+    },
   },
 }
 </script>
